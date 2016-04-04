@@ -1066,6 +1066,10 @@ MonoBehaviour:
   recoveryCoefficient: 0
   ratioSick: 0
   probability: 0
+  handwashing: 0
+  treatment1: 0
+  treatment2: 0
+  treatment3: 0
 --- !u!4 &1777347496
 Transform:
   m_ObjectHideFlags: 0

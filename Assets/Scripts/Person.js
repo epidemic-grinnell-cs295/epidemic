@@ -9,7 +9,8 @@ Update() – person checks if they are in the right place. If they are, check if
   a new place, go to that place.
 
 LeaveScheduledLocation() – Leave the current location, calls the location’s 
-  checkOut() method.
+  checkOut() method. Determine health status based off of interactions and 
+  coefficients.
 
 scheduleNextLocation() – change the schedule, time to move on.
 

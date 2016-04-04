@@ -3,6 +3,10 @@ LocationSpawner.js
 
 Generates all of the location objects. The spawner makes locations, and then 
 does nothing while the game runs.
+
+Sets initial infection and recovery coefficients for each type of location. 
+While all locations of a given type begin with the same values, individual values
+can change as the game progresses.
 */
 
 var locationPrefab : Location;
@@ -32,8 +36,8 @@ function Awake () {
   loc.name = "Sleep";
   loc.kind = LocKind.Sleep;
   loc.index = ++locationCount;
-  loc.infectionCoefficient = 1000;
-  loc.recoveryCoefficient = 2;
+  loc.infectionCoefficient = 0.01;
+  loc.recoveryCoefficient = 0.05;
   loc.transform.parent = this.transform;  
   loc.transform.SetAsFirstSibling();
 
@@ -41,11 +45,12 @@ function Awake () {
   locationPrefab.name = "Travel";
   locationPrefab.kind = LocKind.Travel;
   locationPrefab.index = ++locationCount;
-  locationPrefab.infectionCoefficient = 5;
-  locationPrefab.recoveryCoefficient = 2;
+  loc.infectionCoefficient = 0.01;
+  loc.recoveryCoefficient = 0.01;
   locationPrefab.transform.parent = this.transform;
 }
 
+//make specified number of homes, work, hospitals, schools.
 function makeLocations(num : int, kind : LocKind, ypos : int) {
   var i : int;
   var loc : Location;
@@ -57,27 +62,28 @@ function makeLocations(num : int, kind : LocKind, ypos : int) {
     loc.name = kind + " " + i;
     loc.transform.parent = this.transform;
     loc.kind = kind;
+    //set infection and recovery coefficients based on location type
     switch (kind) {
       case LocKind.Home:
-        loc.infectionCoefficient = 5;
-   	  	loc.recoveryCoefficient = 2;
+        loc.infectionCoefficient = 0.6;
+   	  	loc.recoveryCoefficient = 0.01;
         break;
       case LocKind.Work:
-        loc.infectionCoefficient = 5;
-   	  	loc.recoveryCoefficient = 2;
+        loc.infectionCoefficient = 0.75;
+   	  	loc.recoveryCoefficient = 0.01;
         break;
       case LocKind.School:
-        loc.infectionCoefficient = 5;
-   		  loc.recoveryCoefficient = 2;
+        loc.infectionCoefficient = 0.75;
+   		loc.recoveryCoefficient = 0.01;
         break;
       case LocKind.Hospital:
-        loc.infectionCoefficient = 1000;
-   		  loc.recoveryCoefficient = 4; 
+        loc.infectionCoefficient = 0.1;
+   		loc.recoveryCoefficient = 0.75; 
         break;
       default:
         Debug.LogError("Invalid location kind, can't finish instantiation");
         break;
-    }
-  }
-}
+    } //switch
+  }//for loop
+}//function
 
