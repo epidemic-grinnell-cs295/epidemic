@@ -36,14 +36,15 @@ var ratioSick : float;
 var probability: float;
 
 //Boolean treatment options
-var handwashing : boolean;
-var treatment1 	: boolean;
-var treatment2 	: boolean;
-var treatment3	: boolean;
-private var hand_ON		: boolean; 	//temp variables to fix problems..
-private var T1_ON		: boolean;
-private var T2_ON		: boolean;
-private var T3_ON		: boolean;
+public var handwashing : boolean = false;
+var treatment1 	: boolean = false;
+var treatment2 	: boolean = false;
+var treatment3	: boolean = false;
+private var hand	: int; 	//temp variables to fix problems..
+private var T1		: int;
+private var T2		: int;
+private var T3		: int;
+
 
 function Awake () {
   population  = 0;
@@ -56,63 +57,34 @@ function Awake () {
   deltaInfectedLeave = 0;
 }
 
+
 function Update (){
+
+	if (handwashing) {hand = 1;}
+	else {hand = 0;}
+	if (treatment1) {T1 = 1;}
+	else {T1 = 0;}
+	if (treatment2) {T2 = 1;}
+	else {T2 = 0;}
+	if (treatment3) {T3 = 1;}
+	else {T3 = 0;}
 
 	switch (kind) {
       case LocKind.Home:
-      	if (handwashing && !hand_ON) 	{
-      		this.infectionCoefficient -= 0.2;
-      		hand_ON = true;}  //this works but is not that nice...
-      	if (treatment1 && !T1_ON)		{
-      		this.recoveryCoefficient += 0.05;
-      		T1_ON = true;}
-      	if (treatment2 && !T2_ON)		{
-      		this.recoveryCoefficient += 0.05;
-      		T2_ON = true;}
-      	if (treatment3 && !T3_ON)		{
-      		this.recoveryCoefficient += 0.15;
-      		T3_ON = true;}
-        break;
+      	this.infectionCoefficient = 0.6 - hand*0.2;
+		this.recoveryCoefficient = 0.01 + T1*0.05 + T2*0.10 + T3*0.15;
+		break;
       case LocKind.Work:
-      	if (handwashing && !hand_ON) 	{
-      		this.infectionCoefficient -= 0.2;
-      		hand_ON = true;}  //this works but is not that nice...
-      	if (treatment1 && !T1_ON)		{
-      		this.recoveryCoefficient += 0.05;
-      		T1_ON = true;}
-      	if (treatment2 && !T2_ON)		{
-      		this.recoveryCoefficient += 0.05;
-      		T2_ON = true;}
-      	if (treatment3 && !T3_ON)		{
-      		this.recoveryCoefficient += 0.15;
-      		T3_ON = true;}
-        break;
+      	this.infectionCoefficient = 0.75 - hand*0.2;
+		this.recoveryCoefficient = 0.01 + T1*0.05 + T2*0.10 + T3*0.15;
+		break;
       case LocKind.School:
-      	if (handwashing && !hand_ON) 	{
-      		this.infectionCoefficient -= 0.2;
-      		hand_ON = true;}  //this works but is not that nice...
-      	if (treatment1 && !T1_ON)		{
-      		this.recoveryCoefficient += 0.05;
-      		T1_ON = true;}
-      	if (treatment2 && !T2_ON)		{
-      		this.recoveryCoefficient += 0.05;
-      		T2_ON = true;}
-      	if (treatment3 && !T3_ON)		{
-      		this.recoveryCoefficient += 0.15;
-      		T3_ON = true;}
+      	this.infectionCoefficient = 0.75 - hand*0.2;
+		this.recoveryCoefficient = 0.01 + T1*0.05 + T2*0.10 + T3*0.15;
+		break;
       case LocKind.Hospital:
-      	if (handwashing && !hand_ON) 	{
-      		this.infectionCoefficient -= 0.2;
-      		hand_ON = true;}  //this works but is not that nice...
-      	if (treatment1 && !T1_ON)		{
-      		this.recoveryCoefficient += 0.05;
-      		T1_ON = true;}
-      	if (treatment2 && !T2_ON)		{
-      		this.recoveryCoefficient += 0.05;
-      		T2_ON = true;}
-      	if (treatment3 && !T3_ON)		{
-      		this.recoveryCoefficient += 0.15;
-      		T3_ON = true;}
+		this.infectionCoefficient = 0.1 - hand*0.2;
+		this.recoveryCoefficient = 0.01 + T1*0.05 + T2*0.05 + T3*0.15;
         break;
       case LocKind.Sleep:
         break;
