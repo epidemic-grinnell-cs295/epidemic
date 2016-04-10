@@ -2161,6 +2161,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1092675049}
+  - 114: {fileID: 1092675050}
   m_Layer: 0
   m_Name: Home 1
   m_TagString: Untagged
@@ -2180,6 +2181,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1663356213}
   m_RootOrder: 1
+--- !u!114 &1092675050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1092675048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a8fc283a9424c328af8b7c5c0b7c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 0
+  population: 0
+  susceptible: 0
+  infected: 0
+  recovered: 0
+  deltaArrive: 0
+  deltaLeave: 0
+  deltaInfected: 0
+  deltaInfectedLeave: 0
+  infectionCoefficient: 0
+  recoveryCoefficient: 0
+  ratioSick: 0
+  probability: 0
+  handwashing: 0
+  treatment1: 0
+  treatment2: 0
+  treatment3: 0
 --- !u!1 &1107529185
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,6 +2428,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1153843315}
+  - 114: {fileID: 1153843316}
   m_Layer: 0
   m_Name: Work 1
   m_TagString: Untagged
@@ -2418,6 +2448,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1663356213}
   m_RootOrder: 3
+--- !u!114 &1153843316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1153843314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c66ee4455c66499798b7ad7df4621ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 0
+  population: 0
+  susceptible: 0
+  infected: 0
+  recovered: 0
+  deltaArrive: 0
+  deltaLeave: 0
+  deltaInfected: 0
+  deltaInfectedLeave: 0
+  infectionCoefficient: 0
+  recoveryCoefficient: 0
+  ratioSick: 0
+  probability: 0
+  handwashing: 0
+  treatment1: 0
+  treatment2: 0
+  treatment3: 0
 --- !u!1 &1169358550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,6 +2941,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1244037550}
+  - 114: {fileID: 1244037551}
   m_Layer: 0
   m_Name: Home 2
   m_TagString: Untagged
@@ -2902,6 +2961,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1663356213}
   m_RootOrder: 2
+--- !u!114 &1244037551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1244037549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5396d0037e81949bbb828f77bcc14c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 0
+  population: 0
+  susceptible: 0
+  infected: 0
+  recovered: 0
+  deltaArrive: 0
+  deltaLeave: 0
+  deltaInfected: 0
+  deltaInfectedLeave: 0
+  infectionCoefficient: 0
+  recoveryCoefficient: 0
+  ratioSick: 0
+  probability: 0
+  handwashing: 0
+  treatment1: 0
+  treatment2: 0
+  treatment3: 0
 --- !u!1 &1256971787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,6 +3708,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1585357334}
+  - 114: {fileID: 1585357335}
   m_Layer: 0
   m_Name: Hospital 1
   m_TagString: Untagged
@@ -3640,6 +3728,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1663356213}
   m_RootOrder: 4
+--- !u!114 &1585357335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1585357333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c988866530a430193baf9e511e3a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 0
+  population: 0
+  susceptible: 0
+  infected: 0
+  recovered: 0
+  deltaArrive: 0
+  deltaLeave: 0
+  deltaInfected: 0
+  deltaInfectedLeave: 0
+  infectionCoefficient: 0
+  recoveryCoefficient: 0
+  ratioSick: 0
+  probability: 0
+  handwashing: 0
+  treatment1: 0
+  treatment2: 0
+  treatment3: 0
 --- !u!1 &1593608337
 GameObject:
   m_ObjectHideFlags: 0
