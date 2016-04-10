@@ -46,6 +46,7 @@ private var T2_ON		: boolean;
 private var T3_ON		: boolean;
 
 function Awake () {
+DontDestroyOnLoad(this);
   population  = 0;
   susceptible = 0;
   infected    = 0;
