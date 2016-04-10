@@ -75,8 +75,10 @@ function Update () {
   if(clock.time >= windowStart && 
      (clock.time <= windowEnd || windowStart >= windowEnd)) {
     leaveScheduledLocation();
-    scheduleNextLocation();
-    goToScheduledLocation();
+    if (schedule.loc.quarantine == false){
+    	scheduleNextLocation();
+    	goToScheduledLocation();
+    	}
   }
   // stay and update health
   else {
@@ -130,7 +132,7 @@ function leaveScheduledLocation() {
 
   infected = schedule.loc.checkOut(health, ratio); 
 
-  if (infected==1)		  {health = Health.infected; }
+  if (infected==1)		  {health = Health.infected;}
   else if (infected==2) {health = Health.recovered;}
 
   interactionCount = 0;
