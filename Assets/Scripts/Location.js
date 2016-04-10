@@ -47,6 +47,7 @@ private var T3		: int;
 
 
 function Awake () {
+DontDestroyOnLoad(this);
   population  = 0;
   susceptible = 0;
   infected    = 0;
