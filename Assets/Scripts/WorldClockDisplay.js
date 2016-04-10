@@ -7,16 +7,15 @@ WorldClock.clockStr.
 
 var clock : WorldClock;
 var MyFont : Font;
+var clockText : UnityEngine.UI.Text;
 
 function Start () {
   clock = this.GetComponent.<WorldClock>();
+  clockText.text = String.Format("Day {0} | {1}", clock.day, clock.clockStr);
 }
 
-function OnGUI () {
-  var largeFont = new GUIStyle();
-  largeFont.fontSize = 19;
-  largeFont.normal.textColor = Color.white;
-  GUI.skin.font = MyFont;
-  var timeText = String.Format("Day {0} | {1}", clock.day, clock.clockStr);
-  GUI.Label (Rect (20, 573, 200, 200), timeText, largeFont);
+function Update () {
+clockText.text = String.Format("Day {0} | {1}", clock.day, clock.clockStr);
 }
+
+

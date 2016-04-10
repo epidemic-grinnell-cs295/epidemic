@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Master
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300001}
+  m_Snapshots:
+  - {fileID: 24500003}
+  m_StartSnapshot: {fileID: 24500003}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - 9992f858b2d6f6643a736f7efc894d16
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500003}
+--- !u!243 &24300001
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9992f858b2d6f6643a736f7efc894d16
+  m_Children: []
+  m_Volume: 76a631b9d2273454fa28e624d08560fb
+  m_Pitch: 8d6c802c39f9db44e97554176010f104
+  m_Effects:
+  - {fileID: 24400002}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400002
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 682f9bdc01f3ce94c9aa5e594801ba15
+  m_EffectName: Attenuation
+  m_MixLevel: 20aa8701bd0910b4bba37d5508d5b5eb
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &24436770
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 438b74627acf3664cbdfbf01e8819044
+  m_EffectName: ParamEQ
+  m_MixLevel: 65af472e85a77aa48aff0c8636f8bbba
+  m_Parameters:
+  - m_ParameterName: Center freq
+    m_GUID: 8c8a8919abb56f840bdcf9a84c9af079
+  - m_ParameterName: Octave range
+    m_GUID: 2040e4c7f48c54a428284d5daf39d2db
+  - m_ParameterName: Frequency gain
+    m_GUID: fbbdef447d8bcff4bb4a303c32774e38
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500003
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 44fc937a39465fd48aba9f8e145f26a1
+  m_FloatValues:
+    43357ca9882680e4e903487cb570adde: 1168
+  m_TransitionOverrides: {}
