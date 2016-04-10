@@ -11,9 +11,9 @@ can change as the game progresses.
 
 var locationPrefab : Location;
 
-var numHomes      = 6;
-var numWorks      = 3;
-var numSchools    = 1;
+var numHomes      = 2;
+var numWorks      = 1;
+var numSchools    = 0;
 var numHospitals  = 1;
 
 private var locationCount;
