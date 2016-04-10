@@ -1,4 +1,4 @@
-
+/*
 A specific location.
 
 name – The name string for the location, like “School 2”.
