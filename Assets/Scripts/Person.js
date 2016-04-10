@@ -31,15 +31,17 @@ class EventList {
   }
 }
 
-// everyone has a health status, a current event schedule, and a link to the
-// single wold clock that syncs everyone together.
-var health     : Health;
-var schedule   : EventList;
-var clock      : WorldClock;
+// CUSTOMIZE
 var homeStr    : String;
 var workStr    : String;
+var sleepStr   : String;
+var health     : Health;
 
-var index      : int; // each person has an index between 1 and number of people
+// general status
+var schedule   : EventList;
+var clock      : WorldClock;
+
+// sickness variables
 var interactionCount : int;
 var infectedCount	   : int;
 var infected	       : int;
@@ -52,9 +54,6 @@ var recoveryCoeff    : float;
 function Start () {
   // name, health, index are all set by PersonSpawner
   // set home, work, and schedule
-  var locs = GameObject.Find("Locations").GetComponent(LocationAssigner); 
-  homeStr  = locs.assignHome();
-  workStr  = locs.assignWork();
   schedule = generateSchedule();
   clock    = GameObject.Find("World Clock").GetComponent(WorldClock);
   interactionCount = 0;
@@ -109,12 +108,12 @@ function generateSchedule () : EventList {
     new EventList(arriveWorkTime, getLocation(workStr),
     new EventList(leaveWorkTime,  getLocation("Travel"),
     new EventList(arriveHomeTime, getLocation(homeStr),
-    new EventList(sleepTime,      getLocation("Sleep"), null))))));
+    new EventList(sleepTime,      getLocation(sleepStr), null))))));
   // link the last event (going to sleep) to the first event (waking up)
   eventCycle.next.next.next.next.next.next = eventCycle;
   // Special start point so everyone starts at 6am on the first day. We use this
   // event once on the first frame to get into the event cycle, then never again.
-  return new EventList(tis(6,0), getLocation("Sleep"),  eventCycle);
+  return new EventList(tis(6,0), getLocation(sleepStr),  eventCycle);
 }
 
 // helper function to look up a location object from its name
@@ -123,7 +122,6 @@ function getLocation(loc : String) {
 }
 
 function leaveScheduledLocation() {
-
   if (interactionCount) { 
     //multiple by 1.0f to convert infectedCount to a float
     ratio = infectedCount*1.0f / interactionCount;

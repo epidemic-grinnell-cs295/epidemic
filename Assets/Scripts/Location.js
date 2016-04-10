@@ -20,8 +20,11 @@ checkOut() – Person calls when they leave the location. First lets the locatio
   made the person more or less sick.
 */
 
-var index : int; // each location has an index between 1 and number of locations
+// CUSTOMIZE
 var kind : LocKind;
+var infectionCoefficient: float;
+var recoveryCoefficient: float;
+
 var population  : int;
 var susceptible : int;
 var infected    : int;
@@ -30,8 +33,6 @@ var deltaArrive	: int;      //  keep track of how many people leave/arrive at
 var deltaLeave	: int;		//  a location durring a frame and if they are sick
 var deltaInfected: int;
 var deltaInfectedLeave: int;
-var infectionCoefficient: float;
-var recoveryCoefficient: float;
 var ratioSick : float;
 var probability: float;
 var quarantine	: boolean = false;
