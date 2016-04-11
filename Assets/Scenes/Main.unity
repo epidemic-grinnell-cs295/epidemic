@@ -240,7 +240,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 74173159}
   - 114: {fileID: 74173161}
-  - 114: {fileID: 74173160}
   m_Layer: 0
   m_Name: Sleep 1
   m_TagString: Untagged
@@ -260,17 +259,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1663356213}
   m_RootOrder: 4
---- !u!114 &74173160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 74173158}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c99f587cc1f141289fe40739f21d16b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &74173161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +301,7 @@ GameObject:
   - 4: {fileID: 88810168}
   - 212: {fileID: 88810170}
   - 95: {fileID: 88810169}
+  - 114: {fileID: 88810171}
   m_Layer: 0
   m_Name: Red Bloop
   m_TagString: Untagged
@@ -379,6 +368,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &88810171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88810167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008c08d1241e48e49701889e1f3d7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock: {fileID: 0}
+  animator: {fileID: 88810169}
 --- !u!1 &107869721
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +391,7 @@ GameObject:
   - 4: {fileID: 107869722}
   - 212: {fileID: 107869724}
   - 95: {fileID: 107869723}
+  - 114: {fileID: 107869725}
   m_Layer: 0
   m_Name: Red Bloop
   m_TagString: Untagged
@@ -455,6 +458,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &107869725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107869721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008c08d1241e48e49701889e1f3d7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock: {fileID: 0}
+  animator: {fileID: 107869723}
 --- !u!1 &111110050
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +694,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 152478711}
   - 114: {fileID: 152478713}
-  - 114: {fileID: 152478712}
   m_Layer: 0
   m_Name: Sleep 2
   m_TagString: Untagged
@@ -698,17 +713,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1663356213}
   m_RootOrder: 5
---- !u!114 &152478712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 152478710}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c99f587cc1f141289fe40739f21d16b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &152478713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,6 +822,7 @@ GameObject:
   - 4: {fileID: 179701210}
   - 212: {fileID: 179701212}
   - 95: {fileID: 179701211}
+  - 114: {fileID: 179701213}
   m_Layer: 5
   m_Name: Blue Bloop
   m_TagString: Untagged
@@ -884,6 +889,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &179701213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 179701209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008c08d1241e48e49701889e1f3d7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock: {fileID: 0}
+  animator: {fileID: 179701211}
 --- !u!1 &195845998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,7 +1428,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 312936601}
   - 114: {fileID: 312936603}
-  - 114: {fileID: 312936602}
   m_Layer: 0
   m_Name: Travel
   m_TagString: Untagged
@@ -1430,17 +1447,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1663356213}
   m_RootOrder: 6
---- !u!114 &312936602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 312936600}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c99f587cc1f141289fe40739f21d16b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &312936603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2254,6 +2260,7 @@ GameObject:
   - 4: {fileID: 648451116}
   - 212: {fileID: 648451118}
   - 95: {fileID: 648451117}
+  - 114: {fileID: 648451119}
   m_Layer: 5
   m_Name: Blue Bloop
   m_TagString: Untagged
@@ -2320,6 +2327,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &648451119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648451115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008c08d1241e48e49701889e1f3d7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock: {fileID: 0}
+  animator: {fileID: 648451117}
 --- !u!1 &653724572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,7 +3047,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 821458835}
   - 114: {fileID: 821458837}
-  - 114: {fileID: 821458836}
   m_Layer: 0
   m_Name: Person 3
   m_TagString: Untagged
@@ -3047,17 +3066,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 716120024}
   m_RootOrder: 2
---- !u!114 &821458836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 821458834}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &821458837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3370,6 +3378,7 @@ GameObject:
   - 4: {fileID: 941584016}
   - 212: {fileID: 941584015}
   - 95: {fileID: 941584014}
+  - 114: {fileID: 941584017}
   m_Layer: 0
   m_Name: Red Bloop
   m_TagString: Untagged
@@ -3436,6 +3445,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 862342182}
   m_RootOrder: 7
+--- !u!114 &941584017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 941584013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008c08d1241e48e49701889e1f3d7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock: {fileID: 0}
+  animator: {fileID: 941584014}
 --- !u!1 &947170930
 GameObject:
   m_ObjectHideFlags: 0
@@ -5169,7 +5191,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1309797701}
   - 114: {fileID: 1309797703}
-  - 114: {fileID: 1309797702}
   m_Layer: 0
   m_Name: Person 2
   m_TagString: Untagged
@@ -5189,17 +5210,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 716120024}
   m_RootOrder: 1
---- !u!114 &1309797702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1309797700}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1309797703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5310,7 +5320,6 @@ GameObject:
   - 92: {fileID: 1333711328}
   - 124: {fileID: 1333711327}
   - 81: {fileID: 1333711326}
-  - 114: {fileID: 1333711331}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5385,17 +5394,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1333711331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1333711325}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ca48c77511b748a1951f5d4417642e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1338095890
 GameObject:
   m_ObjectHideFlags: 0
@@ -6065,7 +6063,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1623103670}
   - 114: {fileID: 1623103672}
-  - 114: {fileID: 1623103671}
   m_Layer: 0
   m_Name: Person 4
   m_TagString: Untagged
@@ -6085,17 +6082,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 716120024}
   m_RootOrder: 3
---- !u!114 &1623103671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1623103669}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1623103672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6294,7 +6280,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1636185052}
   - 114: {fileID: 1636185054}
-  - 114: {fileID: 1636185053}
   m_Layer: 0
   m_Name: Person 7
   m_TagString: Untagged
@@ -6314,17 +6299,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 716120024}
   m_RootOrder: 6
---- !u!114 &1636185053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1636185051}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1636185054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6427,7 +6401,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1651194979}
   - 114: {fileID: 1651194981}
-  - 114: {fileID: 1651194980}
   m_Layer: 0
   m_Name: Person 5
   m_TagString: Untagged
@@ -6447,17 +6420,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 716120024}
   m_RootOrder: 4
---- !u!114 &1651194980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1651194978}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1651194981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6526,7 +6488,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1693243238}
   - 114: {fileID: 1693243240}
-  - 114: {fileID: 1693243239}
   m_Layer: 0
   m_Name: Person 8
   m_TagString: Untagged
@@ -6546,17 +6507,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 716120024}
   m_RootOrder: 7
---- !u!114 &1693243239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1693243237}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1693243240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6649,7 +6599,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1710456158}
   - 114: {fileID: 1710456160}
-  - 114: {fileID: 1710456159}
   m_Layer: 0
   m_Name: Person 6
   m_TagString: Untagged
@@ -6669,17 +6618,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 716120024}
   m_RootOrder: 5
---- !u!114 &1710456159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1710456157}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1710456160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7060,6 +6998,7 @@ GameObject:
   - 4: {fileID: 1828704570}
   - 212: {fileID: 1828704572}
   - 95: {fileID: 1828704571}
+  - 114: {fileID: 1828704573}
   m_Layer: 5
   m_Name: Blue Bloop
   m_TagString: Untagged
@@ -7126,6 +7065,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1828704573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1828704569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008c08d1241e48e49701889e1f3d7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock: {fileID: 0}
+  animator: {fileID: 1828704571}
 --- !u!1 &1838505896
 GameObject:
   m_ObjectHideFlags: 0
@@ -7251,7 +7203,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1842170452}
   - 114: {fileID: 1842170454}
-  - 114: {fileID: 1842170453}
   m_Layer: 0
   m_Name: Person 9
   m_TagString: Untagged
@@ -7271,17 +7222,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 716120024}
   m_RootOrder: 8
---- !u!114 &1842170453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1842170451}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1842170454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7583,7 +7523,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1973567689}
   - 114: {fileID: 1973567691}
-  - 114: {fileID: 1973567690}
   m_Layer: 0
   m_Name: Person 1
   m_TagString: Untagged
@@ -7603,17 +7542,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 716120024}
   m_RootOrder: 0
---- !u!114 &1973567690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1973567688}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1973567691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7856,6 +7784,7 @@ GameObject:
   - 4: {fileID: 2129266498}
   - 212: {fileID: 2129266500}
   - 95: {fileID: 2129266499}
+  - 114: {fileID: 2129266501}
   m_Layer: 0
   m_Name: Red Bloop
   m_TagString: Untagged
@@ -7922,6 +7851,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &2129266501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2129266497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2008c08d1241e48e49701889e1f3d7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clock: {fileID: 0}
+  animator: {fileID: 2129266499}
 --- !u!1 &2136192753
 GameObject:
   m_ObjectHideFlags: 0
