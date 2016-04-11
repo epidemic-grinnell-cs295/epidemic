@@ -17,12 +17,12 @@ function Update () {
   var healthy : int;
   var sick : int;
   if(sleep) {
-  	healthy = home.susceptible + home.recovered + sleep.susceptible + sleep.recovered;
     sick = home.infected + sleep.infected;
+    healthy = home.population + sleep.population - sick;
   }
   else {
-    healthy = home.susceptible + home.recovered;
     sick = home.infected;
+    healthy = home.population - sick;
   }
   healthyText.text = String.Format("{0}", healthy);
   sickText.text = String.Format("{0}", sick);

@@ -274,15 +274,9 @@ MonoBehaviour:
   infectionCoefficient: 0
   recoveryCoefficient: 0
   population: 0
-  susceptible: 0
   infected: 0
-  recovered: 0
-  deltaArrive: 0
-  deltaLeave: 0
+  deltaPop: 0
   deltaInfected: 0
-  deltaInfectedLeave: 0
-  ratioSick: 0
-  probability: 0
   quarantine: 0
   sanitization: 0
   appointments: 0
@@ -728,15 +722,9 @@ MonoBehaviour:
   infectionCoefficient: 0
   recoveryCoefficient: 0
   population: 0
-  susceptible: 0
   infected: 0
-  recovered: 0
-  deltaArrive: 0
-  deltaLeave: 0
+  deltaPop: 0
   deltaInfected: 0
-  deltaInfectedLeave: 0
-  ratioSick: 0
-  probability: 0
   quarantine: 0
   sanitization: 0
   appointments: 0
@@ -1462,15 +1450,9 @@ MonoBehaviour:
   infectionCoefficient: 0
   recoveryCoefficient: 0
   population: 0
-  susceptible: 0
   infected: 0
-  recovered: 0
-  deltaArrive: 0
-  deltaLeave: 0
+  deltaPop: 0
   deltaInfected: 0
-  deltaInfectedLeave: 0
-  ratioSick: 0
-  probability: 0
   quarantine: 0
   sanitization: 0
   appointments: 0
@@ -3077,20 +3059,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3386470c56a499ca6361c8245ad80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeStr: Home 2
-  workStr: Work 1
-  sleepStr: Sleep 2
+  homeLoc: {fileID: 1092675050}
+  workLoc: {fileID: 1153843316}
+  sleepLoc: {fileID: 74173161}
+  hospitalLoc: {fileID: 1585357335}
   health: 0
-  schedule:
-    start: 0
-    loc: {fileID: 0}
   clock: {fileID: 668180237}
-  interactionCount: 0
+  interactedCount: 0
   infectedCount: 0
-  infected: 0
-  ratio: 0
-  infectionCoeff: 0
-  recoveryCoeff: 0
+  schedule:
+    morning: 0
+    midday: 0
+    evening: 0
+    sleep: 0
+  currentLoc: {fileID: 0}
+  travelTime: 0
+  cooldownTime: 0
+  traveling: 0
+  cooldown: 0
 --- !u!1 &831168253
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,18 +3919,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kind: 0
-  infectionCoefficient: 0.6
+  infectionCoefficient: 0.7
   recoveryCoefficient: 0.01
   population: 0
-  susceptible: 0
   infected: 0
-  recovered: 0
-  deltaArrive: 0
-  deltaLeave: 0
+  deltaPop: 0
   deltaInfected: 0
-  deltaInfectedLeave: 0
-  ratioSick: 0
-  probability: 0
   quarantine: 0
   sanitization: 0
   appointments: 0
@@ -4218,15 +4198,9 @@ MonoBehaviour:
   infectionCoefficient: 0.75
   recoveryCoefficient: 0.01
   population: 0
-  susceptible: 0
   infected: 0
-  recovered: 0
-  deltaArrive: 0
-  deltaLeave: 0
+  deltaPop: 0
   deltaInfected: 0
-  deltaInfectedLeave: 0
-  ratioSick: 0
-  probability: 0
   quarantine: 0
   sanitization: 0
   appointments: 0
@@ -4910,18 +4884,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kind: 0
-  infectionCoefficient: 0.6
+  infectionCoefficient: 0.9
   recoveryCoefficient: 0.01
   population: 0
-  susceptible: 0
   infected: 0
-  recovered: 0
-  deltaArrive: 0
-  deltaLeave: 0
+  deltaPop: 0
   deltaInfected: 0
-  deltaInfectedLeave: 0
-  ratioSick: 0
-  probability: 0
   quarantine: 0
   sanitization: 0
   appointments: 0
@@ -5221,20 +5189,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3386470c56a499ca6361c8245ad80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeStr: Home 1
-  workStr: Work 1
-  sleepStr: Sleep 1
+  homeLoc: {fileID: 1092675050}
+  workLoc: {fileID: 1153843316}
+  sleepLoc: {fileID: 74173161}
+  hospitalLoc: {fileID: 1585357335}
   health: 0
-  schedule:
-    start: 0
-    loc: {fileID: 0}
   clock: {fileID: 668180237}
-  interactionCount: 0
+  interactedCount: 0
   infectedCount: 0
-  infected: 0
-  ratio: 0
-  infectionCoeff: 0
-  recoveryCoeff: 0
+  schedule:
+    morning: 0
+    midday: 0
+    evening: 0
+    sleep: 0
+  currentLoc: {fileID: 0}
+  travelTime: 0
+  cooldownTime: 0
+  traveling: 0
+  cooldown: 0
 --- !u!1 &1330804335
 GameObject:
   m_ObjectHideFlags: 0
@@ -5962,17 +5934,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kind: 3
   infectionCoefficient: 0.1
-  recoveryCoefficient: 0.75
+  recoveryCoefficient: 0.6
   population: 0
-  susceptible: 0
   infected: 0
-  recovered: 0
-  deltaArrive: 0
-  deltaLeave: 0
+  deltaPop: 0
   deltaInfected: 0
-  deltaInfectedLeave: 0
-  ratioSick: 0
-  probability: 0
   quarantine: 0
   sanitization: 0
   appointments: 0
@@ -6093,20 +6059,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3386470c56a499ca6361c8245ad80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeStr: Home 1
-  workStr: Work 1
-  sleepStr: Sleep 1
+  homeLoc: {fileID: 1244037551}
+  workLoc: {fileID: 1153843316}
+  sleepLoc: {fileID: 152478713}
+  hospitalLoc: {fileID: 1585357335}
   health: 0
-  schedule:
-    start: 0
-    loc: {fileID: 0}
   clock: {fileID: 668180237}
-  interactionCount: 0
+  interactedCount: 0
   infectedCount: 0
-  infected: 0
-  ratio: 0
-  infectionCoeff: 0
-  recoveryCoeff: 0
+  schedule:
+    morning: 0
+    midday: 0
+    evening: 0
+    sleep: 0
+  currentLoc: {fileID: 0}
+  travelTime: 0
+  cooldownTime: 0
+  traveling: 0
+  cooldown: 0
 --- !u!1 &1623922302
 GameObject:
   m_ObjectHideFlags: 0
@@ -6310,20 +6280,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3386470c56a499ca6361c8245ad80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeStr: Home 1
-  workStr: Work 1
-  sleepStr: Sleep 1
+  homeLoc: {fileID: 1244037551}
+  workLoc: {fileID: 1153843316}
+  sleepLoc: {fileID: 152478713}
+  hospitalLoc: {fileID: 1585357335}
   health: 0
-  schedule:
-    start: 0
-    loc: {fileID: 0}
   clock: {fileID: 668180237}
-  interactionCount: 0
+  interactedCount: 0
   infectedCount: 0
-  infected: 0
-  ratio: 0
-  infectionCoeff: 0
-  recoveryCoeff: 0
+  schedule:
+    morning: 0
+    midday: 0
+    evening: 0
+    sleep: 0
+  currentLoc: {fileID: 0}
+  travelTime: 0
+  cooldownTime: 0
+  traveling: 0
+  cooldown: 0
 --- !u!1 &1641160745
 GameObject:
   m_ObjectHideFlags: 0
@@ -6431,20 +6405,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3386470c56a499ca6361c8245ad80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeStr: Home 2
-  workStr: Work 1
-  sleepStr: Sleep 2
+  homeLoc: {fileID: 1244037551}
+  workLoc: {fileID: 1153843316}
+  sleepLoc: {fileID: 152478713}
+  hospitalLoc: {fileID: 1585357335}
   health: 0
-  schedule:
-    start: 0
-    loc: {fileID: 0}
   clock: {fileID: 668180237}
-  interactionCount: 0
+  interactedCount: 0
   infectedCount: 0
-  infected: 0
-  ratio: 0
-  infectionCoeff: 0
-  recoveryCoeff: 0
+  schedule:
+    morning: 0
+    midday: 0
+    evening: 0
+    sleep: 0
+  currentLoc: {fileID: 0}
+  travelTime: 0
+  cooldownTime: 0
+  traveling: 0
+  cooldown: 0
 --- !u!1 &1663356212
 GameObject:
   m_ObjectHideFlags: 0
@@ -6518,20 +6496,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3386470c56a499ca6361c8245ad80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeStr: Home 1
-  workStr: Work 1
-  sleepStr: Sleep 1
+  homeLoc: {fileID: 1092675050}
+  workLoc: {fileID: 1153843316}
+  sleepLoc: {fileID: 74173161}
+  hospitalLoc: {fileID: 1585357335}
   health: 0
-  schedule:
-    start: 0
-    loc: {fileID: 0}
   clock: {fileID: 668180237}
-  interactionCount: 0
+  interactedCount: 0
   infectedCount: 0
-  infected: 0
-  ratio: 0
-  infectionCoeff: 0
-  recoveryCoeff: 0
+  schedule:
+    morning: 0
+    midday: 0
+    evening: 0
+    sleep: 0
+  currentLoc: {fileID: 0}
+  travelTime: 0
+  cooldownTime: 0
+  traveling: 0
+  cooldown: 0
 --- !u!1 &1710442459
 GameObject:
   m_ObjectHideFlags: 0
@@ -6629,20 +6611,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3386470c56a499ca6361c8245ad80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeStr: Home 2
-  workStr: Work 1
-  sleepStr: Sleep 2
+  homeLoc: {fileID: 1092675050}
+  workLoc: {fileID: 1153843316}
+  sleepLoc: {fileID: 74173161}
+  hospitalLoc: {fileID: 1585357335}
   health: 0
-  schedule:
-    start: 0
-    loc: {fileID: 0}
   clock: {fileID: 668180237}
-  interactionCount: 0
+  interactedCount: 0
   infectedCount: 0
-  infected: 0
-  ratio: 0
-  infectionCoeff: 0
-  recoveryCoeff: 0
+  schedule:
+    morning: 0
+    midday: 0
+    evening: 0
+    sleep: 0
+  currentLoc: {fileID: 0}
+  travelTime: 0
+  cooldownTime: 0
+  traveling: 0
+  cooldown: 0
 --- !u!1 &1744707387
 GameObject:
   m_ObjectHideFlags: 0
@@ -7233,20 +7219,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3386470c56a499ca6361c8245ad80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeStr: Home 2
-  workStr: Work 1
-  sleepStr: Sleep 2
+  homeLoc: {fileID: 1244037551}
+  workLoc: {fileID: 1153843316}
+  sleepLoc: {fileID: 152478713}
+  hospitalLoc: {fileID: 1585357335}
   health: 0
-  schedule:
-    start: 0
-    loc: {fileID: 0}
   clock: {fileID: 668180237}
-  interactionCount: 0
+  interactedCount: 0
   infectedCount: 0
-  infected: 0
-  ratio: 0
-  infectionCoeff: 0
-  recoveryCoeff: 0
+  schedule:
+    morning: 0
+    midday: 0
+    evening: 0
+    sleep: 0
+  currentLoc: {fileID: 0}
+  travelTime: 0
+  cooldownTime: 0
+  traveling: 0
+  cooldown: 0
 --- !u!1 &1853104936
 GameObject:
   m_ObjectHideFlags: 0
@@ -7553,20 +7543,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3386470c56a499ca6361c8245ad80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeStr: Home 1
-  workStr: Work 1
-  sleepStr: Sleep 1
+  homeLoc: {fileID: 1092675050}
+  workLoc: {fileID: 1153843316}
+  sleepLoc: {fileID: 74173161}
+  hospitalLoc: {fileID: 1585357335}
   health: 1
-  schedule:
-    start: 0
-    loc: {fileID: 0}
   clock: {fileID: 668180237}
-  interactionCount: 0
+  interactedCount: 0
   infectedCount: 0
-  infected: 0
-  ratio: 0
-  infectionCoeff: 0
-  recoveryCoeff: 0
+  schedule:
+    morning: 0
+    midday: 0
+    evening: 0
+    sleep: 0
+  currentLoc: {fileID: 0}
+  travelTime: 0
+  cooldownTime: 0
+  traveling: 0
+  cooldown: 0
 --- !u!1 &2001989020
 GameObject:
   m_ObjectHideFlags: 0

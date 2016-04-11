@@ -26,16 +26,10 @@ var infectionCoefficient: float;
 var recoveryCoefficient: float;
 
 // general status
-var population  : int;
-var susceptible : int;
-var infected    : int;
-var recovered   : int;
-var deltaArrive	: int;      //  keep track of how many people leave/arrive at 
-var deltaLeave	: int;		//  a location durring a frame and if they are sick
-var deltaInfected: int;
-var deltaInfectedLeave: int;
-var ratioSick : float;
-var probability: float;
+var population    : int;
+var infected      : int;
+var deltaPop	    : int; 
+var deltaInfected : int;
 
 // policies
 var quarantine	 : boolean;
@@ -43,6 +37,7 @@ var sanitization : boolean;
 var appointments : boolean;
 var experimental : boolean;
 
+// gui buttons
 var quarantineToggle	 : UnityEngine.UI.Toggle;
 var sanitizationToggle : UnityEngine.UI.Toggle;
 var appointmentsToggle : UnityEngine.UI.Toggle;
@@ -50,14 +45,10 @@ var experimentalToggle : UnityEngine.UI.Toggle;
 
 // set everything
 function Awake () {
-  population  = 0;
-  susceptible = 0;
-  infected    = 0;
-  recovered   = 0;
-  deltaArrive = 0;
-  deltaLeave  = 0;
+  population    = 0;
+  infected      = 0;
+  deltaPop      = 0;
   deltaInfected = 0;
-  deltaInfectedLeave = 0;
 }
 
 function Update (){
@@ -65,40 +56,65 @@ function Update (){
 }//function
 
 function LateUpdate () {
-  population += deltaArrive;
-  population -= deltaLeave;
-  infected += deltaInfected;
-  infected -= deltaInfectedLeave;
-  deltaArrive =0;
-  deltaLeave=0;
-  deltaInfected=0;
-  deltaInfectedLeave=0;
+  population   += deltaPop;
+  infected     += deltaInfected;
+  deltaPop      = 0;
+  deltaInfected = 0;
 }
 
-function getBetter(){
-  switch (kind) {
-      case LocKind.Home:
-		this.recoveryCoefficient = 0.2;
-		break;
-      case LocKind.Work:
-		this.recoveryCoefficient = 0.3;
-		break;
-      case LocKind.School:
-		this.recoveryCoefficient = 0.3;
-		break;
-      case LocKind.Hospital:
-		this.recoveryCoefficient = 0.7;
-        break;
-      case LocKind.Sleep:
-        break;
-      case LocKind.Travel:
-        break;
-      default:
-        Debug.LogError("Invalid location kind, can't finish instantiation");
-        break;
+function checkIn (health : Health) {
+  deltaPop++;
+  if (health == Health.infected) { 
+    deltaInfected++; 
   }
 }
 
+function checkOut (health : Health) {
+  deltaPop--;
+  if (health == Health.infected) {
+    deltaInfected--;
+  }
+}
+
+function updateHealth(health : Health, ratioSick : float) {
+
+  var newHealth : Health;
+
+  if (health == Health.susceptible) { 
+    var coeff = this.recoveryCoefficient;
+    if (this.sanitation) {coeff -= .25;}
+    if (this.experimental) {coeff += .25;}
+    probability = ratioSick*coeff;
+    probability = ratioSick*(this.infectionCoefficient);
+    if (Random.Range(0,100) < probability*100) {
+      newHealth = Health.infected;
+      deltaInfected++;
+    }
+    else {
+      newHealth = health;
+    }
+  }
+  
+  else if (health == Health.infected) {
+    coeff = this.recoveryCoefficient;
+    if (this.experimental) {coeff += .25;}
+    probability = ratioSick*coeff;
+    if (Random.Range(0,100) < probability*100) {
+      newHealth = Health.recovered;
+      deltaInfected--;
+    }
+    else {
+      newHealth = health;
+    }
+  }
+
+  else if (health == Health.recovered) {
+    newHealth = health;
+  }
+
+  return newHealth;
+}
+ 
 function toggleQuarantine() {
   this.quarantine = quarantineToggle.isOn;
   if(this.quarantine && appointmentsToggle) {
@@ -122,35 +138,3 @@ function toggleAppointments() {
 function toggleExperimental() {
   this.experimental = this.experimentalToggle.isOn;
 }
-
-function checkIn (health : Health) {
-  deltaArrive++;
-  //alter location and global health variables
-  if (health == Health.susceptible)    { susceptible++; }
-  else if (health == Health.infected)  { deltaInfected++; }
-  else if (health == Health.recovered) { recovered++; }
-}
-
-function checkOut (health : Health, ratioSick : float) {
-  if (!this.quarantine) {deltaLeave++;}
-  //alter location and global health variables, define probability, return sickness status
-  if (health == Health.susceptible)    { 
-  	if (!this.quarantine) {susceptible--;}
-  	probability = ratioSick*(this.infectionCoefficient);
-  	if (Random.Range(0,100)<probability*100) {return 1;}
-	}
-  else if (health == Health.infected)  {
-  	if (!this.quarantine) {deltaInfectedLeave++;}
-  	probability = ratioSick*(this.recoveryCoefficient);
-  	if (Random.Range(0,100)<probability*100) {return 2;}
-	}
-  else if (health == Health.recovered) {
-  	if(!this.quarantine) {recovered--;}
-
-	}
-
- 
-
-  Debug.Log("Ratio = " + ratioSick + "Probability = " + probability + " Location " + this.name);
-}
- 
