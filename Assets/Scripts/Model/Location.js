@@ -38,10 +38,15 @@ var ratioSick : float;
 var probability: float;
 
 // policies
-var quarantine	 : boolean = false;
-var sanitization : boolean = false;
-var appointments : boolean = false;
-var experimental : boolean = false;
+var quarantine	 : boolean;
+var sanitization : boolean;
+var appointments : boolean;
+var experimental : boolean;
+
+var quarantineToggle	 : UnityEngine.UI.Toggle;
+var sanitizationToggle : UnityEngine.UI.Toggle;
+var appointmentsToggle : UnityEngine.UI.Toggle;
+var experimentalToggle : UnityEngine.UI.Toggle;
 
 // set everything
 function Awake () {
@@ -95,19 +100,27 @@ function getBetter(){
 }
 
 function toggleQuarantine() {
-  this.quarantine = !this.quarantine;
+  this.quarantine = quarantineToggle.isOn;
+  if(this.quarantine && appointmentsToggle) {
+    appointmentsToggle.isOn = false;
+    this.appointments = false;
+  }
 }
 
 function toggleSanitization() {
-  this.sanitization = !this.sanitization;
+  this.sanitization = this.sanitizationToggle.isOn;
 }
 
 function toggleAppointments() {
-  this.appointments = !this.appointments;
+  this.appointments = this.appointmentsToggle.isOn;
+  if(this.appointments && quarantineToggle) {
+    quarantineToggle.isOn = false;
+    this.quarantine = false;
+  }
 }
   
 function toggleExperimental() {
-  this.experimental = !this.experimental;
+  this.experimental = this.experimentalToggle.isOn;
 }
 
 function checkIn (health : Health) {
