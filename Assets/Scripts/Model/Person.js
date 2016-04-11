@@ -95,12 +95,12 @@ function generateSchedule () : EventList {
   var range = Random.Range;
   // we build a circular list. We can't add the last line, which ties the end 
   // back to the beginning, until after eventCycle is defined, so it's null.
-  var wakeTime       = clock.timeInSeconds(range(6,9),range(0,59));   // 6 to 9:59
-  var leaveHomeTime  = wakeTime + range(30,91)*60;                    // 6:30 to 11:30
-  var travelTime     = range(15,45)*60;                               // 15 to 45 min
-  var arriveWorkTime = leaveHomeTime + travelTime;                    // 6:45 to 12:15
+  var wakeTime       = clock.timeInSeconds(range(6,9),range(0,59)); // 6 to 9:59
+  var leaveHomeTime  = wakeTime + range(30,91)*60;          // 6:30 to 11:30
+  var travelTime     = 20*60;                               // 20 min
+  var arriveWorkTime = leaveHomeTime + travelTime;          // 6:50 to 11:50
   var leaveWorkTime  = clock.timeInSeconds(range(15,18),range(0,30)); // 3 to 6:30
-  var arriveHomeTime = leaveWorkTime + travelTime;                    // 3:15 to 7:15
+  var arriveHomeTime = leaveWorkTime + travelTime;                // 3:20 to 6:50
   var sleepTime      = clock.timeInSeconds(range(20,23),range(0,59)); // 8 to 11:59
   var eventCycle = 
     new EventList(wakeTime,       getLocation(homeStr), 
