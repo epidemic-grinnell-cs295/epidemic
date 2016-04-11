@@ -25,6 +25,7 @@ var kind : LocKind;
 var infectionCoefficient: float;
 var recoveryCoefficient: float;
 
+// general status
 var population  : int;
 var susceptible : int;
 var infected    : int;
@@ -35,21 +36,14 @@ var deltaInfected: int;
 var deltaInfectedLeave: int;
 var ratioSick : float;
 var probability: float;
-var quarantine	: boolean = false;
 
+// policies
+var quarantine	 : boolean = false;
+var sanitization : boolean = false;
+var appointments : boolean = false;
+var experimental : boolean = false;
 
-//Boolean treatment options - used in check boxes on the side (not gameplay)
-/*
-public var handwashing : boolean = false;
-var treatment1 	: boolean = false;
-var treatment2 	: boolean = false;
-var treatment3	: boolean = false;
-private var hand	: int; 	//temp variables to fix problems..
-private var T1		: int;
-private var T2		: int;
-private var T3		: int; */
-
-
+// set everything
 function Awake () {
   population  = 0;
   susceptible = 0;
@@ -61,45 +55,8 @@ function Awake () {
   deltaInfectedLeave = 0;
 }
 
-
 function Update (){
 
-/* checkboxes that can be used in the non-game display
-
-	if (handwashing) {hand = 1;}
-	else {hand = 0;}
-	if (treatment1) {T1 = 1;}
-	else {T1 = 0;}
-	if (treatment2) {T2 = 1;}
-	else {T2 = 0;}
-	if (treatment3) {T3 = 1;}
-	else {T3 = 0;}
-
-	switch (kind) {
-      case LocKind.Home:
-      	this.infectionCoefficient = 0.6 - hand*0.2;
-		this.recoveryCoefficient = 0.01 + T1*0.05 + T2*0.10 + T3*0.15;
-		break;
-      case LocKind.Work:
-      	this.infectionCoefficient = 0.75 - hand*0.2;
-		this.recoveryCoefficient = 0.01 + T1*0.05 + T2*0.10 + T3*0.15;
-		break;
-      case LocKind.School:
-      	this.infectionCoefficient = 0.75 - hand*0.2;
-		this.recoveryCoefficient = 0.01 + T1*0.05 + T2*0.10 + T3*0.15;
-		break;
-      case LocKind.Hospital:
-		this.infectionCoefficient = 0.1 - hand*0.2;
-		this.recoveryCoefficient = 0.01 + T1*0.05 + T2*0.05 + T3*0.15;
-        break;
-      case LocKind.Sleep:
-        break;
-      case LocKind.Travel:
-        break;
-      default:
-        Debug.LogError("Invalid location kind, can't finish instantiation");
-        break;
-   }//switch	 */
 }//function
 
 function LateUpdate () {
@@ -137,8 +94,20 @@ function getBetter(){
   }
 }
 
-function quarantineLoc(){
-  this.quarantine = true;
+function toggleQuarantine() {
+  this.quarantine = !this.quarantine;
+}
+
+function toggleSanitization() {
+  this.sanitization = !this.sanitization;
+}
+
+function toggleAppointments() {
+  this.appointments = !this.appointments;
+}
+  
+function toggleExperimental() {
+  this.experimental = !this.experimental;
 }
 
 function checkIn (health : Health) {

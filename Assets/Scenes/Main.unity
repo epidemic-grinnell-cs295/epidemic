@@ -271,7 +271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c99f587cc1f141289fe40739f21d16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loc: {fileID: 0}
 --- !u!114 &74173161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,7 +702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c99f587cc1f141289fe40739f21d16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loc: {fileID: 0}
 --- !u!114 &152478713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,7 +1416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c99f587cc1f141289fe40739f21d16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loc: {fileID: 0}
 --- !u!114 &312936603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3015,7 +3012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 0}
 --- !u!114 &821458837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3646,7 +3642,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 211, y: -126}
+  m_AnchoredPosition: {x: 280, y: -126}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1016973474
@@ -4064,7 +4060,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Treatment
+  m_Text: Experimental Treatment
 --- !u!222 &1129369792
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4496,7 +4492,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 211, y: 57}
+  m_AnchoredPosition: {x: 280, y: 57}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209838671
@@ -5093,7 +5089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 0}
 --- !u!114 &1309797703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5290,11 +5285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca48c77511b748a1951f5d4417642e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSize: 6
-  maxSize: 15
-  zoomSpeed: 10
-  size: 0
-  moveSpeed: 5
 --- !u!1 &1338095890
 GameObject:
   m_ObjectHideFlags: 0
@@ -5977,7 +5967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 0}
 --- !u!114 &1623103672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6207,7 +6196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 0}
 --- !u!114 &1636185054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6341,7 +6329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 0}
 --- !u!114 &1651194981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6441,7 +6428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 0}
 --- !u!114 &1693243240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6565,7 +6551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 0}
 --- !u!114 &1710456160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6730,7 +6715,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Treatment
+  m_Text: Free Doctor Appointments
 --- !u!222 &1755162567
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7168,7 +7153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 0}
 --- !u!114 &1842170454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7501,7 +7485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9c2def12a8148898f2cfa19a0b9ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 0}
 --- !u!114 &1973567691
 MonoBehaviour:
   m_ObjectHideFlags: 0
