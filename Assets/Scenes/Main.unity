@@ -531,7 +531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quarentine
+  m_Text: Quarantine
 --- !u!222 &111110053
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1943,7 +1943,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quarentine
+  m_Text: Quarantine
 --- !u!222 &445296601
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4275,7 +4275,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quarentine
+  m_Text: Quarantine
 --- !u!222 &1169358553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5193,7 +5193,7 @@ MonoBehaviour:
   workLoc: {fileID: 1153843316}
   sleepLoc: {fileID: 74173161}
   hospitalLoc: {fileID: 1585357335}
-  health: 0
+  health: 1
   clock: {fileID: 668180237}
   interactedCount: 0
   infectedCount: 0
@@ -6013,7 +6013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quarentine
+  m_Text: Quarantine
 --- !u!222 &1593608340
 CanvasRenderer:
   m_ObjectHideFlags: 0

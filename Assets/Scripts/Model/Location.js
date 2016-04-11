@@ -98,7 +98,7 @@ function updateHealth(health : Health, ratioSick : float) {
   else if (health == Health.infected) {
     coeff = this.recoveryCoefficient;
     if (this.experimental) {coeff += .25;}
-    probability = ratioSick*coeff;
+    probability = (1-ratioSick)*coeff;
     if (Random.Range(0,100) < probability*100) {
       newHealth = Health.recovered;
       deltaInfected--;

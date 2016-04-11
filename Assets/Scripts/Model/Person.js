@@ -69,7 +69,7 @@ function Update () {
     // do nothing
   }
   // done traveling
-  else if (traveling && clock.time > travelTime) {
+  else if (traveling && clock.time >= travelTime) {
     traveling = false; 
     goToCurrentLocation();
   }
@@ -78,49 +78,58 @@ function Update () {
     checkHealth();
   }
   // cooldown done
-  else if (cooldown && clock.time > cooldownTime) {
+  else if (cooldown && clock.time >= cooldownTime) {
     cooldown = false;
     checkHealth();
   }
-  else if (currentLoc.appointments && health == Health.infected 
-      && Random.Range(0,100) < 1) {
-      leaveCurrentLocation();
-      currentLoc = hospitalLoc;
-      travelTime = clock.time + 20*60;
-      cooldownTime = travelTime + 10*60;
-      traveling = true;
-      cooldown = true;
-  }
-  else if (currentLoc.kind == LocKind.Hospital && health == Health.infected 
-      && Random.Range(0,200) < 199) {
-    checkHealth();
-  }
-  // check if its time to move on
-  else {
-    var loc = scheduledLocation();
-    // if it's time to move on, and no quarantine
-    if(loc != currentLoc && !currentLoc.quarantine && !loc.quarantine) {
-      leaveCurrentLocation();
-      if (currentLoc.kind == LocKind.Sleep || loc.kind == LocKind.Sleep) {
-        currentLoc = loc;
-        travelTime = clock.time;
-        cooldownTime = travelTime + 10*60;
-        traveling = false;
-        cooldown = true;
-        goToCurrentLocation();
-      }
-      else {
-        currentLoc = loc;
-        travelTime = clock.time + 20*60;
-        cooldownTime = travelTime + 10*60;
+  // otherwise if might be time to go somewhere else, but only if the current
+  // location is not quarantined
+  else if (!currentLoc.quarantine) {
+    // at work, decide to go to hospital, hospital is open
+    if (currentLoc.appointments && health == Health.infected 
+        && !hospitalLoc.quarantine && Random.Range(0,100) < 1) {
+        leaveCurrentLocation();
+        currentLoc = hospitalLoc;
+        travelTime = clock.time + 30*60;
+        cooldownTime = travelTime + 20*60;
         traveling = true;
         cooldown = true;
-      }
     }
-    // otherwise stay put
-    else {
+    // at hospital, decide to stay longer
+    else if (currentLoc.kind == LocKind.Hospital && health == Health.infected 
+        && Random.Range(0,200) < 199) {
       checkHealth();
     }
+    // check if its time to move on
+    else {
+      var loc = scheduledLocation();
+      // if it's time to move on, and no quarantine
+      if(loc != currentLoc && !loc.quarantine && !currentLoc.quarantine) {
+        leaveCurrentLocation();
+        if (currentLoc.kind == LocKind.Sleep || loc.kind == LocKind.Sleep) {
+          currentLoc = loc;
+          travelTime = clock.time;
+          cooldownTime = travelTime + 10*60;
+          traveling = false;
+          cooldown = true;
+          goToCurrentLocation();
+        }
+        else {
+          currentLoc = loc;
+          travelTime = clock.time + 20*60;
+          cooldownTime = travelTime + 10*60;
+          traveling = true;
+          cooldown = true;
+        }
+      }
+      else {
+        checkHealth();
+      }
+    }
+  }
+  // if quarantined, stay put
+  else {
+    checkHealth();
   }
 }
 
@@ -172,7 +181,7 @@ function checkHealth () {
   interactedCount += currentLoc.deltaPop;
   infectedCount += currentLoc.deltaInfected;
 
-  if (Random.Range(0,150) < (clock.daySpeed/1200)) {
+  if (Random.Range(0,100) < (clock.daySpeed/1200)) {
     var ratio;
     if (interactedCount != 0) { 
       //multiple by 1.0f to convert infectedCount to a float
