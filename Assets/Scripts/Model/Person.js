@@ -39,6 +39,7 @@ var hospitalLoc : Location;
 var health   : Health;
 
 var clock      : WorldClock;
+var endState   : EndState;
 
 // sickness variables
 var interactedCount : int;     // total number of people interacted
@@ -61,6 +62,7 @@ function Start () {
   cooldown = false;
   currentLoc = scheduledLocation();
   goToCurrentLocation();
+  endState.report(health);
 }
 
 function Update () {
@@ -131,6 +133,9 @@ function Update () {
   else {
     checkHealth();
   }
+
+  endState.report(health);
+
 }
 
 // Each person should have a semi-random schedule. Right now that means everyone
@@ -190,7 +195,6 @@ function checkHealth () {
     else { 
       ratio = 0; 
     }
-
     health = currentLoc.updateHealth(health, ratio); 
 
     interactedCount = 0;

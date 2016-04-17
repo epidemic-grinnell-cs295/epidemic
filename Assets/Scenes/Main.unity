@@ -85,6 +85,49 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1743325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1743327}
+  - 114: {fileID: 1743326}
+  m_Layer: 0
+  m_Name: EndState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1743326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1743325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef821e8ad89d47c18dde9354e335dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalpopulation: 9
+  healthy: 0
+  winText: {fileID: 1217221857}
+  clock: {fileID: 668180237}
+--- !u!4 &1743327
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1743325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.34577078, y: 0.1824857, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &54511075
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,6 +3108,7 @@ MonoBehaviour:
   hospitalLoc: {fileID: 1585357335}
   health: 0
   clock: {fileID: 668180237}
+  endState: {fileID: 1743326}
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -4698,6 +4742,79 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1217221855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1217221856}
+  - 222: {fileID: 1217221858}
+  - 114: {fileID: 1217221857}
+  m_Layer: 5
+  m_Name: Win Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1217221856
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1217221855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1256971791}
+  m_RootOrder: 10
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.0000019073, y: 0}
+  m_SizeDelta: {x: 626, y: 97}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1217221857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1217221855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: YOU WON!!!!!
+--- !u!222 &1217221858
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1217221855}
 --- !u!1 &1224546623
 GameObject:
   m_ObjectHideFlags: 0
@@ -4992,6 +5109,7 @@ RectTransform:
   - {fileID: 1710442460}
   - {fileID: 2045050395}
   - {fileID: 2076945541}
+  - {fileID: 1217221856}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
@@ -5195,6 +5313,7 @@ MonoBehaviour:
   hospitalLoc: {fileID: 1585357335}
   health: 1
   clock: {fileID: 668180237}
+  endState: {fileID: 1743326}
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -6065,6 +6184,7 @@ MonoBehaviour:
   hospitalLoc: {fileID: 1585357335}
   health: 0
   clock: {fileID: 668180237}
+  endState: {fileID: 1743326}
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -6286,6 +6406,7 @@ MonoBehaviour:
   hospitalLoc: {fileID: 1585357335}
   health: 0
   clock: {fileID: 668180237}
+  endState: {fileID: 1743326}
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -6411,6 +6532,7 @@ MonoBehaviour:
   hospitalLoc: {fileID: 1585357335}
   health: 0
   clock: {fileID: 668180237}
+  endState: {fileID: 1743326}
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -6502,6 +6624,7 @@ MonoBehaviour:
   hospitalLoc: {fileID: 1585357335}
   health: 0
   clock: {fileID: 668180237}
+  endState: {fileID: 1743326}
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -6617,6 +6740,7 @@ MonoBehaviour:
   hospitalLoc: {fileID: 1585357335}
   health: 0
   clock: {fileID: 668180237}
+  endState: {fileID: 1743326}
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -7225,6 +7349,7 @@ MonoBehaviour:
   hospitalLoc: {fileID: 1585357335}
   health: 0
   clock: {fileID: 668180237}
+  endState: {fileID: 1743326}
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -7549,6 +7674,7 @@ MonoBehaviour:
   hospitalLoc: {fileID: 1585357335}
   health: 1
   clock: {fileID: 668180237}
+  endState: {fileID: 1743326}
   interactedCount: 0
   infectedCount: 0
   schedule:
