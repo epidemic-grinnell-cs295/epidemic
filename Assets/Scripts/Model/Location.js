@@ -79,13 +79,13 @@ function checkOut (health : Health) {
 function updateHealth(health : Health, ratioSick : float) {
 
   var newHealth : Health;
+  var coeff : float;
 
   if (health == Health.susceptible) { 
-    var coeff = this.recoveryCoefficient;
+    coeff = this.infectionCoefficient;
     if (this.sanitation) {coeff -= .25;}
     if (this.experimental) {coeff += .25;}
     probability = ratioSick*coeff;
-    probability = ratioSick*(this.infectionCoefficient);
     if (Random.Range(0,100) < probability*100) {
       newHealth = Health.infected;
       deltaInfected++;
