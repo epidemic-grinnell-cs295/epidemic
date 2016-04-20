@@ -80,10 +80,11 @@ function updateHealth(health : Health, ratioSick : float) {
 
   var newHealth : Health;
   var coeff : float;
+  var probability : float;
 
   if (health == Health.susceptible) { 
     coeff = this.infectionCoefficient;
-    if (this.sanitation) {coeff -= .25;}
+    if (this.sanitization) {coeff -= .25;}
     if (this.experimental) {coeff += .25;}
     probability = ratioSick*coeff;
     if (Random.Range(0,100) < probability*100) {

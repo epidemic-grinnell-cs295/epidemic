@@ -52,12 +52,10 @@ function Update () {
   // go at night speed
   if (time >= nightStart && time < dayStart) {
     time += Time.deltaTime*nightSpeed;
-    daytime = false;
   }
   // go at day speed
   else {
     time += Time.deltaTime*daySpeed;
-    daytime = true;
   }
   // if we have overflowed into a new day, increment the day counter
   if (time > secsPerDay) {

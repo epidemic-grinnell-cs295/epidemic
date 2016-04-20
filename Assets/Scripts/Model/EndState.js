@@ -3,10 +3,14 @@ var totalpopulation : int;
 var healthy : int;
 var winText	 : UnityEngine.UI.Text;
 var clock      : WorldClock;
+var bgSprite : Sprite;
+var animator : UnityEngine.Animator;
 
 function Awake () {
 	healthy = 0;
 	winText.color = UnityEngine.Color.clear;
+	animator.speed = 0;
+	//bgSprite.enabled = false;
 }
 
 function Update () {
@@ -15,18 +19,18 @@ function Update () {
 
 function LateUpdate () {
 	Debug.Log ("Healthy = " + healthy + ", Total = " + totalpopulation);
-	if (healthy == totalpopulation && clock.day > 1)
+	if (healthy == totalpopulation )
 	{
 		EndGame();
 	}
-	else {
-		healthy = 0;
-	}
+	healthy = 0;
 }
 
 function EndGame() {
-	winText.color = UnityEngine.Color.black;
-	//clock.pauseTime(); 
+	clock.daySpeed = 0;
+	animator.speed = 5;
+	//bgSprite.enabled = true;
+
 }
 
 function report(health : Health) {

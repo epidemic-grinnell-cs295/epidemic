@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Win Text
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Sprites
     uniqueID: 4055684355
+    locked: 0
+  - name: Win
+    uniqueID: 3502887365
     locked: 0
