@@ -28,17 +28,19 @@ var recoveryCoefficient: float;
 // general status
 var population    : int;
 var infected      : int;
-var deltaPop	    : int; 
+var deltaPop	  : int; 
 var deltaInfected : int;
 
 // policies
 var quarantine	 : boolean;
+var close		 : boolean;
 var sanitization : boolean;
 var appointments : boolean;
 var experimental : boolean;
 
 // gui buttons
-var quarantineToggle	 : UnityEngine.UI.Toggle;
+var quarantineToggle   : UnityEngine.UI.Toggle;
+var closeToggle        : UnityEngine.UI.Toggle;
 var sanitizationToggle : UnityEngine.UI.Toggle;
 var appointmentsToggle : UnityEngine.UI.Toggle;
 var experimentalToggle : UnityEngine.UI.Toggle;
@@ -117,8 +119,12 @@ function updateHealth(health : Health, ratioSick : float) {
 }
  
 function toggleQuarantine() {
-  this.quarantine = quarantineToggle.isOn;
-  if(this.quarantine && appointmentsToggle) {
+  this.quarantine = this.quarantineToggle.isOn;
+}
+
+function toggleclose() {
+  this.close = closeToggle.isOn;
+  if(this.close && appointmentsToggle) {
     appointmentsToggle.isOn = false;
     this.appointments = false;
   }
@@ -130,9 +136,9 @@ function toggleSanitization() {
 
 function toggleAppointments() {
   this.appointments = this.appointmentsToggle.isOn;
-  if(this.appointments && quarantineToggle) {
-    quarantineToggle.isOn = false;
-    this.quarantine = false;
+  if(this.appointments && closeToggle) {
+    closeToggle.isOn = false;
+    this.close = false;
   }
 }
   

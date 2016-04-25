@@ -18,7 +18,7 @@ function Update () {
 }
 
 function LateUpdate () {
-	Debug.Log ("Healthy = " + healthy + ", Total = " + totalpopulation);
+	//Debug.Log ("Healthy = " + healthy + ", Total = " + totalpopulation);
 	if (healthy == totalpopulation )
 	{
 		EndGame();

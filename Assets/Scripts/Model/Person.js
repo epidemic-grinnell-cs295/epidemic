@@ -48,95 +48,98 @@ var infectedCount	   : int;    // number of those that were sick
 // traveling
 var schedule     : Schedule;
 var currentLoc   : Location;
-var travelTime   : int;
-var cooldownTime : int;
-var traveling : boolean;
-var cooldown : boolean;
+var loc			 : Location;
+var waitFrames	 : int;
+var officePound  : boolean;
 
 function Start () {
   schedule = generateSchedule();
   clock    = GameObject.Find("World Clock").GetComponent(WorldClock);
   interactedCount = 0;
   infectedCount = 0;
-  traveling = false;
-  cooldown = false;
+  officePound = false;
+
   currentLoc = scheduledLocation();
+  loc = scheduledLocation();
   goToCurrentLocation();
   endState.report(health);
 }
 
 function Update () {
-  // traveling
-  if (traveling && clock.time < travelTime) {
-    // do nothing
-  }
-  // done traveling
-  else if (traveling && clock.time >= travelTime) {
-    traveling = false; 
-    goToCurrentLocation();
-  }
-  // recovering from travel
-  else if (cooldown && clock.time < cooldownTime) {
-    checkHealth();
-  }
-  // cooldown done
-  else if (cooldown && clock.time >= cooldownTime) {
-    cooldown = false;
-    checkHealth();
-  }
-  // otherwise if might be time to go somewhere else, but only if the current
-  // location is not quarantined
-  else if (!currentLoc.quarantine) {
-    // at work, decide to go to hospital, hospital is open
-    if (currentLoc.appointments && health == Health.infected 
-        && !hospitalLoc.quarantine && Random.Range(0,100) < 1) {
-        leaveCurrentLocation();
-        currentLoc = hospitalLoc;
-        travelTime = clock.time + 30*60;
-        cooldownTime = travelTime + 20*60;
-        traveling = true;
-        cooldown = true;
-    }
-    // at hospital, decide to stay longer
-    else if (currentLoc.kind == LocKind.Hospital && health == Health.infected 
-        && Random.Range(0,200) < 199) {
-      checkHealth();
-    }
-    // check if its time to move on
-    else {
-      var loc = scheduledLocation();
-      // if it's time to move on, and no quarantine
-      if(loc != currentLoc && !loc.quarantine && !currentLoc.quarantine) {
-        leaveCurrentLocation();
-        if (currentLoc.kind == LocKind.Sleep || loc.kind == LocKind.Sleep) {
-          currentLoc = loc;
-          travelTime = clock.time;
-          cooldownTime = travelTime + 10*60;
-          traveling = false;
-          cooldown = true;
-          goToCurrentLocation();
-        }
-        else {
-          currentLoc = loc;
-          travelTime = clock.time + 20*60;
-          cooldownTime = travelTime + 10*60;
-          traveling = true;
-          cooldown = true;
-        }
-      }
-      else {
-        checkHealth();
-      }
-    }
-  }
-  // if quarantined, stay put
-  else {
-    checkHealth();
-  }
+  var time = clock.time;
+  loc = scheduledLocation();
+  if (currentLoc.quarantine) {checkHealth();} //Can't move
+  else if (time >= schedule.sleep && time < schedule.morning)	{sleepMovement();}
+  else if (time >= schedule.morning && time < schedule.evening)	{middayMovement();}
+  else if (time >= schedule.evening && time < schedule.sleep)	{eveningMovement();}
 
   endState.report(health);
-
 }
+
+ function sleepMovement(){
+  //Go to sleep location unless in Hosptial
+  if (currentLoc != loc && currentLoc.kind != LocKind.Hospital){ moveTo(loc, 200); }
+  else {checkHealth();}
+  officePound = false;
+ }
+
+
+function middayMovement(){
+
+  switch (currentLoc.kind){
+  case (LocKind.Hospital):
+  	if(health == Health.infected) { moveTo(loc, 1); }
+  	else { moveTo(loc, 2); }
+  	break;
+
+  case (LocKind.Sleep):
+  case (LocKind.Home):
+    if (currentLoc != loc){ moveTo(loc, 200);} //Move from home to work
+  	else if (!hospitalLoc.quarantine && health == Health.infected) { moveTo(hospitalLoc, 2); }
+  	else if (!hospitalLoc.quarantine) { moveTo(hospitalLoc, 1); } 
+  	break;
+
+  case (LocKind.Work):
+   if (currentLoc.close) { moveTo(homeLoc, 180);}
+   else if (currentLoc.appointments && !hospitalLoc.quarantine){
+    	if(health == Health.infected) { moveTo(hospitalLoc, 4);}
+    	else { moveTo(hospitalLoc, 1);}}
+  	break;
+
+  default:
+  	checkHealth();
+  	break;
+  }
+ }
+
+ function eveningMovement(){
+  //Hospital Movement
+  if(currentLoc.kind == LocKind.Hospital && health == Health.infected)		 { moveTo(loc, 2); }
+  else if (currentLoc.kind == LocKind.Hospital && health != Health.infected) { moveTo(loc, 1); }
+  //Return home from work
+  else if (currentLoc != loc)	{ moveTo(loc, 200); }
+  else {checkHealth();}
+ }
+
+function moveTo(newLoc : Location, probability : int){
+ if (Random.Range(0,200) < probability) { 
+  leaveCurrentLocation();
+  if (newLoc.close && !officePound) { 
+  	poundOfficeDoor();
+  	newLoc = homeLoc;}
+  else if (newLoc.close && officePound) {newLoc = homeLoc;}
+  currentLoc = newLoc;
+  goToCurrentLocation();
+  }
+ }
+
+ function poundOfficeDoor(){
+  leaveCurrentLocation();
+  officePound = true;
+  //animation goes here
+  Debug.Log("Pound on door");
+  goToCurrentLocation();
+ }
 
 // Each person should have a semi-random schedule. Right now that means everyone
 // goes between work and home, but they leave/arrive at different times and
@@ -177,7 +180,7 @@ function leaveCurrentLocation() {
 
 function goToCurrentLocation () {
   currentLoc.checkIn(health);
-  Debug.Log(this.name+" travels to "+currentLoc.name+" at time "+clock.clockStr);
+  //Debug.Log(this.name+" travels to "+currentLoc.name+" at time "+clock.clockStr);
   interactedCount += currentLoc.population;
   infectedCount += currentLoc.infected;
 }

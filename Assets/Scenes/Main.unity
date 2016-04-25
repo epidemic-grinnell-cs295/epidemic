@@ -323,10 +323,12 @@ MonoBehaviour:
   deltaPop: 0
   deltaInfected: 0
   quarantine: 0
+  close: 0
   sanitization: 0
   appointments: 0
   experimental: 0
   quarantineToggle: {fileID: 0}
+  closeToggle: {fileID: 0}
   sanitizationToggle: {fileID: 0}
   appointmentsToggle: {fileID: 0}
   experimentalToggle: {fileID: 0}
@@ -771,10 +773,12 @@ MonoBehaviour:
   deltaPop: 0
   deltaInfected: 0
   quarantine: 0
+  close: 0
   sanitization: 0
   appointments: 0
   experimental: 0
   quarantineToggle: {fileID: 0}
+  closeToggle: {fileID: 0}
   sanitizationToggle: {fileID: 0}
   appointmentsToggle: {fileID: 0}
   experimentalToggle: {fileID: 0}
@@ -1566,10 +1570,12 @@ MonoBehaviour:
   deltaPop: 0
   deltaInfected: 0
   quarantine: 0
+  close: 0
   sanitization: 0
   appointments: 0
   experimental: 0
   quarantineToggle: {fileID: 0}
+  closeToggle: {fileID: 0}
   sanitizationToggle: {fileID: 0}
   appointmentsToggle: {fileID: 0}
   experimentalToggle: {fileID: 0}
@@ -3406,10 +3412,9 @@ MonoBehaviour:
     evening: 0
     sleep: 0
   currentLoc: {fileID: 0}
-  travelTime: 0
-  cooldownTime: 0
-  traveling: 0
-  cooldown: 0
+  loc: {fileID: 0}
+  waitFrames: 0
+  officePound: 0
 --- !u!1 &831168253
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,10 +4264,12 @@ MonoBehaviour:
   deltaPop: 0
   deltaInfected: 0
   quarantine: 0
+  close: 0
   sanitization: 0
   appointments: 0
   experimental: 0
   quarantineToggle: {fileID: 208354043}
+  closeToggle: {fileID: 0}
   sanitizationToggle: {fileID: 1623922304}
   appointmentsToggle: {fileID: 0}
   experimentalToggle: {fileID: 0}
@@ -4602,10 +4609,12 @@ MonoBehaviour:
   deltaPop: 0
   deltaInfected: 0
   quarantine: 0
+  close: 0
   sanitization: 0
   appointments: 0
   experimental: 0
-  quarantineToggle: {fileID: 1209838671}
+  quarantineToggle: {fileID: 0}
+  closeToggle: {fileID: 1209838671}
   sanitizationToggle: {fileID: 0}
   appointmentsToggle: {fileID: 1492436771}
   experimentalToggle: {fileID: 0}
@@ -4675,7 +4684,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quarantine
+  m_Text: Close
 --- !u!222 &1169358553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4959,7 +4968,7 @@ GameObject:
   - 224: {fileID: 1209838670}
   - 114: {fileID: 1209838671}
   m_Layer: 5
-  m_Name: Quarentine Toggle Office
+  m_Name: Close Toggle Office
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5027,7 +5036,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1153843316}
-        m_MethodName: toggleQuarantine
+        m_MethodName: toggleclose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5364,10 +5373,12 @@ MonoBehaviour:
   deltaPop: 0
   deltaInfected: 0
   quarantine: 0
+  close: 0
   sanitization: 0
   appointments: 0
   experimental: 0
   quarantineToggle: {fileID: 955071520}
+  closeToggle: {fileID: 0}
   sanitizationToggle: {fileID: 1107529187}
   appointmentsToggle: {fileID: 0}
   experimentalToggle: {fileID: 0}
@@ -5443,7 +5454,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
@@ -5785,10 +5795,9 @@ MonoBehaviour:
     evening: 0
     sleep: 0
   currentLoc: {fileID: 0}
-  travelTime: 0
-  cooldownTime: 0
-  traveling: 0
-  cooldown: 0
+  loc: {fileID: 0}
+  waitFrames: 0
+  officePound: 0
 --- !u!1 &1330804335
 GameObject:
   m_ObjectHideFlags: 0
@@ -6522,10 +6531,12 @@ MonoBehaviour:
   deltaPop: 0
   deltaInfected: 0
   quarantine: 0
+  close: 0
   sanitization: 0
   appointments: 0
   experimental: 0
   quarantineToggle: {fileID: 1016973474}
+  closeToggle: {fileID: 0}
   sanitizationToggle: {fileID: 0}
   appointmentsToggle: {fileID: 0}
   experimentalToggle: {fileID: 2001989022}
@@ -6656,10 +6667,9 @@ MonoBehaviour:
     evening: 0
     sleep: 0
   currentLoc: {fileID: 0}
-  travelTime: 0
-  cooldownTime: 0
-  traveling: 0
-  cooldown: 0
+  loc: {fileID: 0}
+  waitFrames: 0
+  officePound: 0
 --- !u!1 &1623922302
 GameObject:
   m_ObjectHideFlags: 0
@@ -6878,10 +6888,9 @@ MonoBehaviour:
     evening: 0
     sleep: 0
   currentLoc: {fileID: 0}
-  travelTime: 0
-  cooldownTime: 0
-  traveling: 0
-  cooldown: 0
+  loc: {fileID: 0}
+  waitFrames: 0
+  officePound: 0
 --- !u!1 &1641160745
 GameObject:
   m_ObjectHideFlags: 0
@@ -7004,10 +7013,9 @@ MonoBehaviour:
     evening: 0
     sleep: 0
   currentLoc: {fileID: 0}
-  travelTime: 0
-  cooldownTime: 0
-  traveling: 0
-  cooldown: 0
+  loc: {fileID: 0}
+  waitFrames: 0
+  officePound: 0
 --- !u!1 &1663356212
 GameObject:
   m_ObjectHideFlags: 0
@@ -7096,10 +7104,9 @@ MonoBehaviour:
     evening: 0
     sleep: 0
   currentLoc: {fileID: 0}
-  travelTime: 0
-  cooldownTime: 0
-  traveling: 0
-  cooldown: 0
+  loc: {fileID: 0}
+  waitFrames: 0
+  officePound: 0
 --- !u!1 &1705274858
 GameObject:
   m_ObjectHideFlags: 0
@@ -7279,10 +7286,9 @@ MonoBehaviour:
     evening: 0
     sleep: 0
   currentLoc: {fileID: 0}
-  travelTime: 0
-  cooldownTime: 0
-  traveling: 0
-  cooldown: 0
+  loc: {fileID: 0}
+  waitFrames: 0
+  officePound: 0
 --- !u!1 &1744707387
 GameObject:
   m_ObjectHideFlags: 0
@@ -7888,10 +7894,9 @@ MonoBehaviour:
     evening: 0
     sleep: 0
   currentLoc: {fileID: 0}
-  travelTime: 0
-  cooldownTime: 0
-  traveling: 0
-  cooldown: 0
+  loc: {fileID: 0}
+  waitFrames: 0
+  officePound: 0
 --- !u!1 &1849870990
 GameObject:
   m_ObjectHideFlags: 0
@@ -8357,10 +8362,9 @@ MonoBehaviour:
     evening: 0
     sleep: 0
   currentLoc: {fileID: 0}
-  travelTime: 0
-  cooldownTime: 0
-  traveling: 0
-  cooldown: 0
+  loc: {fileID: 0}
+  waitFrames: 0
+  officePound: 0
 --- !u!1 &1997428363
 GameObject:
   m_ObjectHideFlags: 0
