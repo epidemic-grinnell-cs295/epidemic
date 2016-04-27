@@ -13,6 +13,10 @@ function Awake () {
 	//bgSprite.enabled = false;
 }
 
+function Start () {
+	
+}
+
 function Update () {
 	
 }
