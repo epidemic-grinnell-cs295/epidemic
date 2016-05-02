@@ -12,6 +12,7 @@ var happiness : int;
 var happinessText : UnityEngine.UI.Text;
 var newDay	: boolean;
 var clock      : WorldClock;
+var endState : EndState;
 
 
 //Toggles
@@ -25,6 +26,7 @@ function Start () {
 	slider.value = happiness;
 	newDay = false;
 	clock = GameObject.Find("World Clock").GetComponent(WorldClock);
+	endState = GameObject.Find("EndState").GetComponent(EndState);
 }
 
 function Update () {
@@ -37,6 +39,10 @@ function Update () {
     	closeCost();
     	newDay = false;}
     else if (time > 30000) { newDay = true; }
+
+    if (happiness <= 0) {
+    	endState.LoseGameHappiness();
+    }
 	 
 }
 

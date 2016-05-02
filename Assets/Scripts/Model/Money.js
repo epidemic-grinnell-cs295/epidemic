@@ -13,6 +13,7 @@ var MyFont : Font;
 var moneyText : UnityEngine.UI.Text;
 var clock      : WorldClock;
 var newDay	: boolean;
+var endState : EndState;
 
 
 //Toggles
@@ -27,6 +28,7 @@ function Start () {
 	moneyText.text = "$" + amount;
 	clock = GameObject.Find("World Clock").GetComponent(WorldClock);
 	newDay = false;
+	endState = GameObject.Find("EndState").GetComponent(EndState);
 }
 
 function Update () {
@@ -41,6 +43,11 @@ function Update () {
     	closeWorkCost();}
     else if (time > 29000) { newDay = true; }
     moneyText.text = "$" + amount;
+
+
+    if (amount <= 0) {
+    	endState.LoseGameMoney();
+    }
 }
 
 function sanitationCost1 (){

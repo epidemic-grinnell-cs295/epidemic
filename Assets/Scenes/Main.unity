@@ -114,10 +114,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalpopulation: 9
   healthy: 0
-  winText: {fileID: 1217221857}
   clock: {fileID: 668180237}
-  bgSprite: {fileID: 21300000, guid: 476f0fa9a3bf1483d9f72e7f4da57199, type: 3}
-  animator: {fileID: 1849870991}
+  bgSprite: {fileID: 1314403001}
+  animatorWin: {fileID: 1849870991}
+  animatorLoseMoney: {fileID: 0}
+  animatorLoseHappiness: {fileID: 0}
 --- !u!4 &1743327
 Transform:
   m_ObjectHideFlags: 0
@@ -1181,7 +1182,7 @@ MonoBehaviour:
   text: {fileID: 1581656157}
   hideText: {fileID: 295764389}
   hideSprite: {fileID: 941584013}
-  popupText: 
+  popupText: Decreases town happiness
 --- !u!61 &208354046
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1834,8 +1835,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: -0.32499346, y: 0}
+  m_SizeDelta: {x: -0.65002, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &346764911
 GameObject:
@@ -1937,6 +1938,7 @@ MonoBehaviour:
   happinessText: {fileID: 0}
   newDay: 0
   clock: {fileID: 0}
+  endState: {fileID: 0}
   quarantineHomeToggle1: {fileID: 208354043}
   quarantineHomeToggle2: {fileID: 955071520}
   closeToggle: {fileID: 1209838671}
@@ -2421,7 +2423,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Quarantine
 --- !u!222 &445296601
@@ -4339,7 +4341,7 @@ MonoBehaviour:
   text: {fileID: 423696623}
   hideText: {fileID: 912457816}
   hideSprite: {fileID: 2129266497}
-  popupText: 
+  popupText: Decreases town happiness
 --- !u!114 &955071522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4646,7 +4648,7 @@ MonoBehaviour:
   text: {fileID: 1537108252}
   hideText: {fileID: 1338095892}
   hideSprite: {fileID: 107869721}
-  popupText: 
+  popupText: Decreases town happiness
 --- !u!61 &1016973477
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4998,7 +5000,7 @@ MonoBehaviour:
   text: {fileID: 2034073188}
   hideText: {fileID: 522092321}
   hideSprite: {fileID: 1828704569}
-  popupText: 
+  popupText: Costs $100 per day
 --- !u!114 &1107529189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5786,7 +5788,7 @@ MonoBehaviour:
   text: {fileID: 1371741928}
   hideText: {fileID: 259636305}
   hideSprite: {fileID: 88810167}
-  popupText: 
+  popupText: Costs $1000 per day
 --- !u!114 &1209838673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6312,6 +6314,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
@@ -6637,6 +6640,7 @@ MonoBehaviour:
   moneyText: {fileID: 1291065258}
   clock: {fileID: 0}
   newDay: 0
+  endState: {fileID: 0}
   sanitationToggle1: {fileID: 1623922304}
   sanitationToggle2: {fileID: 1107529187}
   sickLeaveToggle: {fileID: 1492436771}
@@ -6700,6 +6704,64 @@ MonoBehaviour:
   loc: {fileID: 0}
   waitTime: 0
   officePound: 0
+--- !u!1 &1314403001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1314403003}
+  - 212: {fileID: 1314403002}
+  m_Layer: 5
+  m_Name: Background (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1314403002
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1314403001}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -792079931
+  m_SortingOrder: 190
+  m_Sprite: {fileID: 21300000, guid: 476f0fa9a3bf1483d9f72e7f4da57199, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &1314403003
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1314403001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09, y: 0.68, z: 0}
+  m_LocalScale: {x: 1.0096762, y: 0.87467045, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
 --- !u!1 &1330804335
 GameObject:
   m_ObjectHideFlags: 0
@@ -7351,7 +7413,7 @@ MonoBehaviour:
   text: {fileID: 1339152190}
   hideText: {fileID: 1277984644}
   hideSprite: {fileID: 179701209}
-  popupText: 
+  popupText: Costs $500 per day
 --- !u!1 &1506915239
 GameObject:
   m_ObjectHideFlags: 0
@@ -8164,7 +8226,7 @@ MonoBehaviour:
   text: {fileID: 1506915241}
   hideText: {fileID: 1072769100}
   hideSprite: {fileID: 653724572}
-  popupText: More expensive, will not decrease happiness
+  popupText: Costs $100 per day
 --- !u!114 &1623922307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8708,8 +8770,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5.1, y: 0}
-  m_SizeDelta: {x: 19.2, y: 0}
+  m_AnchoredPosition: {x: -0.0000078082085, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1705274860
 MonoBehaviour:
@@ -9485,7 +9547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1849870991
 Animator:
   serializedVersion: 3
@@ -10247,7 +10309,7 @@ MonoBehaviour:
   text: {fileID: 859154223}
   hideText: {fileID: 1238978649}
   hideSprite: {fileID: 648451115}
-  popupText: 
+  popupText: Costs $200 per day
 --- !u!114 &2001989024
 MonoBehaviour:
   m_ObjectHideFlags: 0
