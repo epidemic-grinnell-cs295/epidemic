@@ -24,6 +24,7 @@ checkOut() – Person calls when they leave the location. First lets the locatio
 var kind : LocKind;
 var infectionCoefficient: float;
 var recoveryCoefficient: float;
+var happiness  : Happiness;
 
 // general status
 var population    : int;
@@ -91,6 +92,7 @@ function updateHealth(health : Health, ratioSick : float) {
     probability = ratioSick*coeff;
     if (Random.Range(0,100) < probability*100) {
       newHealth = Health.infected;
+      happiness.sickCost();		//player looses happiness
       deltaInfected++;
     }
     else {
@@ -104,7 +106,8 @@ function updateHealth(health : Health, ratioSick : float) {
     probability = (1-ratioSick)*coeff;
     if (Random.Range(0,100) < probability*100) {
       newHealth = Health.recovered;
-      deltaInfected--;
+      happiness.recoveredCost(); 	//player gains happiness
+      deltaInfected--;				
     }
     else {
       newHealth = health;

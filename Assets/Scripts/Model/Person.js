@@ -40,6 +40,7 @@ var health   : Health;
 
 var clock      : WorldClock;
 var endState   : EndState;
+var pause	   : boolean;
 
 // sickness variables
 var interactedCount : int;     // total number of people interacted
@@ -49,7 +50,7 @@ var infectedCount	   : int;    // number of those that were sick
 var schedule     : Schedule;
 var currentLoc   : Location;
 var loc			 : Location;
-var waitFrames	 : int;
+var waitTime=0;
 var officePound  : boolean;
 
 function Start () {
@@ -68,7 +69,15 @@ function Start () {
 function Update () {
   var time = clock.time;
   loc = scheduledLocation();
-  if (currentLoc.quarantine) {checkHealth();} //Can't move
+  if (time >= schedule.evening) {officePound = false;}
+
+  if (clock.daySpeed == 0){ /*do nothing*/ }
+
+  else if (waitTime>0) { //To deal with issue of people moving too fast
+  	checkHealth();
+  	waitTime --; }
+
+  else if (currentLoc.quarantine) {checkHealth();} //Can't move
   else if (time >= schedule.sleep && time < schedule.morning)	{sleepMovement();}
   else if (time >= schedule.morning && time < schedule.evening)	{middayMovement();}
   else if (time >= schedule.evening && time < schedule.sleep)	{eveningMovement();}
@@ -80,7 +89,6 @@ function Update () {
   //Go to sleep location unless in Hosptial
   if (currentLoc != loc && currentLoc.kind != LocKind.Hospital){ moveTo(loc, 200); }
   else {checkHealth();}
-  officePound = false;
  }
 
 
@@ -94,15 +102,15 @@ function middayMovement(){
 
   case (LocKind.Sleep):
   case (LocKind.Home):
-    if (currentLoc != loc){ moveTo(loc, 200);} //Move from home to work
-  	else if (!hospitalLoc.quarantine && health == Health.infected) { moveTo(hospitalLoc, 2); }
+    if (currentLoc != loc){ moveTo(loc, 50);} //Move from home to work
+  	else if (!hospitalLoc.quarantine && health == Health.infected) { moveTo(hospitalLoc, 1); }
   	else if (!hospitalLoc.quarantine) { moveTo(hospitalLoc, 1); } 
   	break;
 
   case (LocKind.Work):
-   if (currentLoc.close) { moveTo(homeLoc, 180);}
+   if (currentLoc.close) { moveTo(homeLoc, 10);}
    else if (currentLoc.appointments && !hospitalLoc.quarantine){
-    	if(health == Health.infected) { moveTo(hospitalLoc, 4);}
+    	if(health == Health.infected) { moveTo(hospitalLoc, 3);}
     	else { moveTo(hospitalLoc, 1);}}
   	break;
 
@@ -122,6 +130,7 @@ function middayMovement(){
  }
 
 function moveTo(newLoc : Location, probability : int){
+ waitTime = 10;
  if (Random.Range(0,200) < probability) { 
   leaveCurrentLocation();
   if (newLoc.close && !officePound) { 

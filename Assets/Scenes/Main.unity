@@ -318,6 +318,7 @@ MonoBehaviour:
   kind: 4
   infectionCoefficient: 0
   recoveryCoefficient: 0
+  happiness: {fileID: 346764914}
   population: 0
   infected: 0
   deltaPop: 0
@@ -768,6 +769,7 @@ MonoBehaviour:
   kind: 4
   infectionCoefficient: 0
   recoveryCoefficient: 0
+  happiness: {fileID: 346764914}
   population: 0
   infected: 0
   deltaPop: 0
@@ -1094,6 +1096,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1092675050}
         m_MethodName: toggleQuarantine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 346764914}
+        m_MethodName: quarantineH1Cost
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1703,6 +1716,7 @@ MonoBehaviour:
   kind: 5
   infectionCoefficient: 0
   recoveryCoefficient: 0
+  happiness: {fileID: 346764914}
   population: 0
   infected: 0
   deltaPop: 0
@@ -1920,6 +1934,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 346764913}
   happiness: 0
+  happinessText: {fileID: 0}
+  newDay: 0
+  clock: {fileID: 0}
+  quarantineHomeToggle1: {fileID: 208354043}
+  quarantineHomeToggle2: {fileID: 955071520}
+  closeToggle: {fileID: 1209838671}
+  quarantineHospitalToggle: {fileID: 1016973474}
 --- !u!1 &349868328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3673,6 +3694,7 @@ MonoBehaviour:
   health: 0
   clock: {fileID: 668180237}
   endState: {fileID: 1743326}
+  pause: 0
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -3682,7 +3704,7 @@ MonoBehaviour:
     sleep: 0
   currentLoc: {fileID: 0}
   loc: {fileID: 0}
-  waitFrames: 0
+  waitTime: 0
   officePound: 0
 --- !u!1 &831168253
 GameObject:
@@ -4288,6 +4310,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 346764914}
+        m_MethodName: quarantineH2Cost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -4584,6 +4617,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 346764914}
+        m_MethodName: quarantineHospitalCost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -4819,6 +4863,7 @@ MonoBehaviour:
   kind: 0
   infectionCoefficient: 0.7
   recoveryCoefficient: 0.01
+  happiness: {fileID: 346764914}
   population: 0
   infected: 0
   deltaPop: 0
@@ -4915,6 +4960,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1244037551}
         m_MethodName: toggleSanitization
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1291065260}
+        m_MethodName: sanitationCost2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5244,6 +5300,7 @@ MonoBehaviour:
   kind: 1
   infectionCoefficient: 0.75
   recoveryCoefficient: 0.01
+  happiness: {fileID: 346764914}
   population: 0
   infected: 0
   deltaPop: 0
@@ -5680,6 +5737,28 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1153843316}
         m_MethodName: toggleclose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1291065260}
+        m_MethodName: closeWorkCost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 346764914}
+        m_MethodName: closeCost
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6146,6 +6225,7 @@ MonoBehaviour:
   kind: 0
   infectionCoefficient: 0.9
   recoveryCoefficient: 0.01
+  happiness: {fileID: 346764914}
   population: 0
   infected: 0
   deltaPop: 0
@@ -6232,7 +6312,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
@@ -6556,6 +6635,13 @@ MonoBehaviour:
   amount: 0
   MyFont: {fileID: 12800000, guid: 3a059f552b3494929ac89cd480491826, type: 3}
   moneyText: {fileID: 1291065258}
+  clock: {fileID: 0}
+  newDay: 0
+  sanitationToggle1: {fileID: 1623922304}
+  sanitationToggle2: {fileID: 1107529187}
+  sickLeaveToggle: {fileID: 1492436771}
+  closeWorkToggle: {fileID: 1209838671}
+  experimentalToggle: {fileID: 2001989022}
 --- !u!1 &1309797700
 GameObject:
   m_ObjectHideFlags: 0
@@ -6602,6 +6688,7 @@ MonoBehaviour:
   health: 1
   clock: {fileID: 668180237}
   endState: {fileID: 1743326}
+  pause: 0
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -6611,7 +6698,7 @@ MonoBehaviour:
     sleep: 0
   currentLoc: {fileID: 0}
   loc: {fileID: 0}
-  waitFrames: 0
+  waitTime: 0
   officePound: 0
 --- !u!1 &1330804335
 GameObject:
@@ -7165,6 +7252,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1153843316}
         m_MethodName: toggleAppointments
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1291065260}
+        m_MethodName: sickLeaveCost
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7786,6 +7884,7 @@ MonoBehaviour:
   kind: 3
   infectionCoefficient: 0.1
   recoveryCoefficient: 0.6
+  happiness: {fileID: 346764914}
   population: 0
   infected: 0
   deltaPop: 0
@@ -7919,6 +8018,7 @@ MonoBehaviour:
   health: 0
   clock: {fileID: 668180237}
   endState: {fileID: 1743326}
+  pause: 0
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -7928,7 +8028,7 @@ MonoBehaviour:
     sleep: 0
   currentLoc: {fileID: 0}
   loc: {fileID: 0}
-  waitFrames: 0
+  waitTime: 0
   officePound: 0
 --- !u!1 &1623922302
 GameObject:
@@ -8012,6 +8112,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1092675050}
         m_MethodName: toggleSanitization
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1291065260}
+        m_MethodName: sanitationCost1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8220,6 +8331,7 @@ MonoBehaviour:
   health: 0
   clock: {fileID: 668180237}
   endState: {fileID: 1743326}
+  pause: 0
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -8229,7 +8341,7 @@ MonoBehaviour:
     sleep: 0
   currentLoc: {fileID: 0}
   loc: {fileID: 0}
-  waitFrames: 0
+  waitTime: 0
   officePound: 0
 --- !u!1 &1641160745
 GameObject:
@@ -8345,6 +8457,7 @@ MonoBehaviour:
   health: 0
   clock: {fileID: 668180237}
   endState: {fileID: 1743326}
+  pause: 0
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -8354,7 +8467,7 @@ MonoBehaviour:
     sleep: 0
   currentLoc: {fileID: 0}
   loc: {fileID: 0}
-  waitFrames: 0
+  waitTime: 0
   officePound: 0
 --- !u!1 &1663356212
 GameObject:
@@ -8494,6 +8607,7 @@ MonoBehaviour:
   health: 0
   clock: {fileID: 668180237}
   endState: {fileID: 1743326}
+  pause: 0
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -8503,7 +8617,7 @@ MonoBehaviour:
     sleep: 0
   currentLoc: {fileID: 0}
   loc: {fileID: 0}
-  waitFrames: 0
+  waitTime: 0
   officePound: 0
 --- !u!1 &1693550162
 GameObject:
@@ -8734,6 +8848,7 @@ MonoBehaviour:
   health: 0
   clock: {fileID: 668180237}
   endState: {fileID: 1743326}
+  pause: 0
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -8743,7 +8858,7 @@ MonoBehaviour:
     sleep: 0
   currentLoc: {fileID: 0}
   loc: {fileID: 0}
-  waitFrames: 0
+  waitTime: 0
   officePound: 0
 --- !u!1 &1744707387
 GameObject:
@@ -9342,6 +9457,7 @@ MonoBehaviour:
   health: 0
   clock: {fileID: 668180237}
   endState: {fileID: 1743326}
+  pause: 0
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -9351,7 +9467,7 @@ MonoBehaviour:
     sleep: 0
   currentLoc: {fileID: 0}
   loc: {fileID: 0}
-  waitFrames: 0
+  waitTime: 0
   officePound: 0
 --- !u!1 &1849870990
 GameObject:
@@ -9868,6 +9984,7 @@ MonoBehaviour:
   health: 1
   clock: {fileID: 668180237}
   endState: {fileID: 1743326}
+  pause: 0
   interactedCount: 0
   infectedCount: 0
   schedule:
@@ -9877,7 +9994,7 @@ MonoBehaviour:
     sleep: 0
   currentLoc: {fileID: 0}
   loc: {fileID: 0}
-  waitFrames: 0
+  waitTime: 0
   officePound: 0
 --- !u!1 &1987575264
 GameObject:
@@ -10092,6 +10209,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1585357335}
         m_MethodName: toggleExperimental
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1291065260}
+        m_MethodName: experimentalCost
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
