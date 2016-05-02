@@ -9,6 +9,7 @@ new day				+100
 */
 
 var amount : float;
+var displayAmount : float;
 var MyFont : Font;
 var moneyText : UnityEngine.UI.Text;
 var clock      : WorldClock;
@@ -24,6 +25,7 @@ var experimentalToggle	: UnityEngine.UI.Toggle;
 
 function Start () {
 	amount = 20000.00;
+	displayAmount = 20000.00;
 	moneyText.text = "$" + amount;
 	clock = GameObject.Find("World Clock").GetComponent(WorldClock);
 	newDay = false;
@@ -40,11 +42,17 @@ function Update () {
     	experimentalCost();
     	closeWorkCost();}
     else if (time > 29000) { newDay = true; }
-    moneyText.text = "$" + amount;
+
+    if (amount < displayAmount){	//mechanic to make money tickdown
+    	displayAmount-- ;
+   		moneyText.text = "$" + displayAmount;}
+   	else if (amount > displayAmount){
+    	displayAmount++ ;
+   		moneyText.text = "$" + displayAmount;}
 }
 
 function sanitationCost1 (){
-	if (this.sanitationToggle1.isOn) {amount -= 100;}
+	if (this.sanitationToggle1.isOn) { amount -= 100;}
 }
 
 function sanitationCost2 (){

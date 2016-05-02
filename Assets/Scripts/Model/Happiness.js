@@ -9,6 +9,7 @@ AI gets better		+5
 
 var slider : UnityEngine.UI.Slider;
 var happiness : int;
+var displayHappiness : int;
 var happinessText : UnityEngine.UI.Text;
 var newDay	: boolean;
 var clock      : WorldClock;
@@ -22,6 +23,7 @@ var quarantineHospitalToggle	: UnityEngine.UI.Toggle;
 
 function Start () {
 	happiness = 100;
+	displayHappiness = 100;
 	slider.value = happiness;
 	newDay = false;
 	clock = GameObject.Find("World Clock").GetComponent(WorldClock);
@@ -29,7 +31,6 @@ function Start () {
 
 function Update () {
 	var time = clock.time;
-	slider.value = happiness;
 	if (time > 28000 && time < 29000 && newDay) {	
     	quarantineH1Cost();		//charge for decisions everyday around 8
     	quarantineH2Cost();
@@ -37,6 +38,15 @@ function Update () {
     	closeCost();
     	newDay = false;}
     else if (time > 30000) { newDay = true; }
+
+    if (happiness < displayHappiness){	//mechanic to make happiness slider move smoother
+    	displayHappiness-- ;
+   		slider.value = displayHappiness;}
+   	else if (happiness > displayHappiness){
+    	displayHappiness++ ;
+   		slider.value = displayHappiness;}
+    
+
 	 
 }
 
