@@ -41,21 +41,16 @@ function Update () {
     	newDay = false;}
     else if (time > 30000) { newDay = true; }
 
-<<<<<<< HEAD
     if (happiness < displayHappiness){	//mechanic to make happiness slider move smoother
     	displayHappiness-- ;
    		slider.value = displayHappiness;}
    	else if (happiness > displayHappiness){
     	displayHappiness++ ;
    		slider.value = displayHappiness;}
-    
 
-=======
     if (happiness <= 0) {
     	endState.LoseGameHappiness();
     }
->>>>>>> upstream/mondaydemo
-	 
 }
 
 function quarantineH1Cost (){

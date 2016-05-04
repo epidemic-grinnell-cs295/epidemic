@@ -44,7 +44,6 @@ function Update () {
     	experimentalCost();
     	closeWorkCost();}
     else if (time > 29000) { newDay = true; }
-<<<<<<< HEAD
 
     if (amount < displayAmount){	//mechanic to make money tickdown
     	displayAmount-- ;
@@ -52,14 +51,12 @@ function Update () {
    	else if (amount > displayAmount){
     	displayAmount++ ;
    		moneyText.text = "$" + displayAmount;}
-=======
     moneyText.text = "$" + amount;
 
 
     if (amount <= 0) {
     	endState.LoseGameMoney();
     }
->>>>>>> upstream/mondaydemo
 }
 
 function sanitationCost1 (){
