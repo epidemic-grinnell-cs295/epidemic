@@ -48,7 +48,7 @@ function Update () {
     	displayHappiness++ ;
    		slider.value = displayHappiness;}
 
-    if (happiness <= 0) {
+    if (displayHappiness <= 0) {
     	endState.LoseGameHappiness();
     }
 }

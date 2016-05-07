@@ -51,10 +51,8 @@ function Update () {
    	else if (amount > displayAmount){
     	displayAmount++ ;
    		moneyText.text = "$" + displayAmount;}
-    moneyText.text = "$" + amount;
 
-
-    if (amount <= 0) {
+    if (displayAmount <= 0) {
     	endState.LoseGameMoney();
     }
 }
@@ -64,7 +62,7 @@ function sanitationCost1 (){
 }
 
 function sanitationCost2 (){
-	if (this.sanitationToggle1.isOn) {amount -= 100;}
+	if (this.sanitationToggle2.isOn) {amount -= 100;}
 }
 
 function sickLeaveCost (){
