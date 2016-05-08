@@ -32,15 +32,18 @@ class Schedule {
 }
 
 // CUSTOMIZE
-var homeLoc  : Location;
-var workLoc  : Location;
-var sleepLoc : Location;
+var health      : Health;
+var homeLoc     : Location;
+var workLoc     : Location;
+var sleepLoc    : Location;
 var hospitalLoc : Location;
-var health   : Health;
+var healthyAnimation : RuntimeAnimatorController;
+var sickAnimation    : RuntimeAnimatorController;
 
-var clock      : WorldClock;
-var endState   : EndState;
-var pause	   : boolean;
+var locID    : int;
+var clock    : WorldClock;
+var endState : EndState;
+var pause	 : boolean;
 
 // sickness variables
 var interactedCount : int;     // total number of people interacted
@@ -56,6 +59,7 @@ var officePound  : boolean;
 function Start () {
   schedule = generateSchedule();
   clock    = GameObject.Find("World Clock").GetComponent(WorldClock);
+  setAnimation();
   interactedCount = 0;
   infectedCount = 0;
   officePound = false;
@@ -184,12 +188,13 @@ function scheduledLocation() {
 }
 
 function leaveCurrentLocation() {
-  currentLoc.checkOut(health);
+  currentLoc.checkOut(locID, health);
 }
 
 function goToCurrentLocation () {
-  currentLoc.checkIn(health);
-  //Debug.Log(this.name+" travels to "+currentLoc.name+" at time "+clock.clockStr);
+  locID = currentLoc.checkIn(health);
+  transform.parent = currentLoc.transform;
+  transform.localPosition = currentLoc.spritePos(locID);
   interactedCount += currentLoc.population;
   infectedCount += currentLoc.infected;
 }
@@ -207,11 +212,25 @@ function checkHealth () {
     else { 
       ratio = 0; 
     }
-    health = currentLoc.updateHealth(health, ratio); 
+    var newHealth = currentLoc.updateHealth(health, ratio);
+    // if health has changed, update the animation too
+    if (health != newHealth) {
+      health = newHealth;
+      setAnimation();
+    }
 
     interactedCount = 0;
     infectedCount = 0;
   }
 
+}
+
+function setAnimation () {
+  if (health == Health.infected) {
+    GetComponent.<Animator>().runtimeAnimatorController = sickAnimation;
+  }
+  else {
+    GetComponent.<Animator>().runtimeAnimatorController = healthyAnimation;
+  }
 }
 
