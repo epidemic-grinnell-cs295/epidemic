@@ -577,8 +577,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newSprite: {fileID: 1951566302}
   text: {fileID: 1581656157}
-  hideText: {fileID: 0}
-  hideSprite: {fileID: 0}
   popupText: Decreases town happiness
 --- !u!61 &208354046
 BoxCollider2D:
@@ -2642,8 +2640,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newSprite: {fileID: 1001148643}
   text: {fileID: 423696623}
-  hideText: {fileID: 0}
-  hideSprite: {fileID: 0}
   popupText: Decreases town happiness
 --- !u!114 &955071522
 MonoBehaviour:
@@ -2949,8 +2945,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newSprite: {fileID: 1211756744}
   text: {fileID: 1537108252}
-  hideText: {fileID: 0}
-  hideSprite: {fileID: 0}
   popupText: Decreases town happiness
 --- !u!61 &1016973477
 BoxCollider2D:
@@ -3171,8 +3165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newSprite: {fileID: 1674151251}
   text: {fileID: 2034073188}
-  hideText: {fileID: 0}
-  hideSprite: {fileID: 0}
   popupText: Costs $100 per day
 --- !u!114 &1107529189
 MonoBehaviour:
@@ -3978,8 +3970,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newSprite: {fileID: 1693550162}
   text: {fileID: 1371741928}
-  hideText: {fileID: 0}
-  hideSprite: {fileID: 0}
   popupText: Costs $1000 per day
 --- !u!114 &1209838673
 MonoBehaviour:
@@ -5320,8 +5310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newSprite: {fileID: 757137361}
   text: {fileID: 1339152190}
-  hideText: {fileID: 0}
-  hideSprite: {fileID: 0}
   popupText: Costs $500 per day
 --- !u!1 &1506915239
 GameObject:
@@ -6069,8 +6057,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newSprite: {fileID: 291179891}
   text: {fileID: 1506915241}
-  hideText: {fileID: 0}
-  hideSprite: {fileID: 0}
   popupText: Costs $100 per day
 --- !u!114 &1623922307
 MonoBehaviour:
@@ -8286,8 +8272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newSprite: {fileID: 1987575264}
   text: {fileID: 859154223}
-  hideText: {fileID: 0}
-  hideSprite: {fileID: 0}
   popupText: Costs $200 per day
 --- !u!114 &2001989024
 MonoBehaviour:
