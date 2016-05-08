@@ -171,7 +171,7 @@ function fillFirstEmptyCell () : int {
       return i;
     }
   }
-  Debug.Error("More than 27 people at location, code is borked.");
+  Debug.LogError("More than 27 people at location, code is borked.");
   return 0;
 }
 
