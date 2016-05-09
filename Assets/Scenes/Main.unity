@@ -492,7 +492,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 862342184}
         m_MethodName: toggleQuarantine
         m_Mode: 1
         m_Arguments:
@@ -2602,7 +2602,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1710442462}
         m_MethodName: toggleQuarantine
         m_Mode: 1
         m_Arguments:
@@ -2907,7 +2907,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2076945543}
         m_MethodName: toggleQuarantine
         m_Mode: 1
         m_Arguments:
@@ -3127,7 +3127,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1710442462}
         m_MethodName: toggleSanitization
         m_Mode: 1
         m_Arguments:
@@ -3921,7 +3921,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2045050397}
         m_MethodName: toggleclose
         m_Mode: 1
         m_Arguments:
@@ -5211,7 +5211,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2045050397}
         m_MethodName: toggleAppointments
         m_Mode: 1
         m_Arguments:
@@ -6005,7 +6005,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 862342184}
         m_MethodName: toggleSanitization
         m_Mode: 1
         m_Arguments:
@@ -8234,7 +8234,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2076945543}
         m_MethodName: toggleExperimental
         m_Mode: 1
         m_Arguments:
