@@ -25,8 +25,8 @@ var closeWorkToggle		: UnityEngine.UI.Toggle;
 var experimentalToggle	: UnityEngine.UI.Toggle;
 
 function Start () {
-	amount = 20000.00;
-	displayAmount = 20000.00;
+	amount = 2000.00;
+	displayAmount = 2000.00;
 	moneyText.text = "$" + amount;
 	clock = GameObject.Find("World Clock").GetComponent(WorldClock);
 	newDay = false;
@@ -46,10 +46,10 @@ function Update () {
     else if (time > 29000) { newDay = true; }
 
     if (amount < displayAmount){	//mechanic to make money tickdown
-    	displayAmount-- ;
+    	displayAmount -= 5 ;
    		moneyText.text = "$" + displayAmount;}
    	else if (amount > displayAmount){
-    	displayAmount++ ;
+    	displayAmount += 5 ;
    		moneyText.text = "$" + displayAmount;}
 
     if (displayAmount <= 0) {

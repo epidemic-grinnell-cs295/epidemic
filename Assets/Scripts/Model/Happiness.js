@@ -3,7 +3,7 @@ Game Object			Cost
 ----------------------------
 quarantine			-5
 close work			-5
-AI gets sick		-5
+AI gets sick		-10
 AI gets better		+5 
 */
 

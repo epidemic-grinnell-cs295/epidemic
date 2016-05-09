@@ -73,7 +73,7 @@ function Start () {
 function Update () {
   var time = clock.time;
   loc = scheduledLocation();
-  if (time >= schedule.evening) {officePound = false;}
+  officePound = false;
 
   if (clock.daySpeed == 0){ /*do nothing*/ }
 
@@ -100,21 +100,21 @@ function middayMovement(){
 
   switch (currentLoc.kind){
   case (LocKind.Hospital):
-  	if(health == Health.infected) { moveTo(loc, 1); }
-  	else { moveTo(loc, 2); }
+  	if(health == Health.infected) { moveTo(loc, 5); }
+  	else { moveTo(loc, 50); }
   	break;
 
   case (LocKind.Sleep):
   case (LocKind.Home):
-    if (currentLoc != loc){ moveTo(loc, 50);} //Move from home to work
-  	else if (!hospitalLoc.quarantine && health == Health.infected) { moveTo(hospitalLoc, 1); }
-  	else if (!hospitalLoc.quarantine) { moveTo(hospitalLoc, 1); } 
+    if (currentLoc != loc && !loc.close){ moveTo(loc, 50);} //Move from home to work
+  	else if (!hospitalLoc.quarantine && health == Health.infected) { moveTo(hospitalLoc, 20); }
+  	else if (!hospitalLoc.quarantine) { moveTo(hospitalLoc, 5); } 
   	break;
 
   case (LocKind.Work):
-   if (currentLoc.close) { moveTo(homeLoc, 10);}
+   if (currentLoc.close) { moveTo(homeLoc, 7);}
    else if (currentLoc.appointments && !hospitalLoc.quarantine){
-    	if(health == Health.infected) { moveTo(hospitalLoc, 3);}
+    	if(health == Health.infected) { moveTo(hospitalLoc, 20);}
     	else { moveTo(hospitalLoc, 1);}}
   	break;
 
@@ -137,10 +137,6 @@ function moveTo(newLoc : Location, probability : int){
  waitTime = 10;
  if (Random.Range(0,200) < probability) { 
   leaveCurrentLocation();
-  if (newLoc.close && !officePound) { 
-  	poundOfficeDoor();
-  	newLoc = homeLoc;}
-  else if (newLoc.close && officePound) {newLoc = homeLoc;}
   currentLoc = newLoc;
   goToCurrentLocation();
   }
