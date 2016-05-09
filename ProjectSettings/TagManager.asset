@@ -50,3 +50,6 @@ TagManager:
   - name: Win
     uniqueID: 3502887365
     locked: 0
+  - name: Popup Text
+    uniqueID: 3493195065
+    locked: 0

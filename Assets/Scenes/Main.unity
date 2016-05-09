@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef821e8ad89d47c18dde9354e335dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalpopulation: 9
+  totalpopulation: 20
   healthy: 0
   clock: {fileID: 668180237}
   bgSprite: {fileID: 1314403001}
@@ -802,7 +802,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 291179893}
   - 212: {fileID: 291179892}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Aggressive Sanitation Home 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -801772231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3b6e50d9ca9d842f09cfe50935446266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1348,7 +1348,7 @@ GameObject:
   - 224: {fileID: 423696622}
   - 222: {fileID: 423696624}
   - 114: {fileID: 423696623}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Home 2 Quarentine Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1404,7 +1404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &423696624
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2225,7 +2225,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 757137362}
   - 212: {fileID: 757137363}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Encourage Sick Leave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2268,7 +2268,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -801772231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3b6e50d9ca9d842f09cfe50935446266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2695,7 +2695,7 @@ GameObject:
   - 224: {fileID: 859154222}
   - 222: {fileID: 859154224}
   - 114: {fileID: 859154223}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Experimental Treatment Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2751,7 +2751,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &859154224
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3398,7 +3398,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1001148644}
   - 212: {fileID: 1001148645}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Quarentine Home 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3441,7 +3441,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -801772231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3b6e50d9ca9d842f09cfe50935446266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4060,7 +4060,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.9, y: 0}
+  m_AnchoredPosition: {x: 0.000008702291, y: -0.00000023841858}
   m_SizeDelta: {x: 25.6, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1111400599
@@ -4082,9 +4082,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 777d91aa2d5d14cb2a4651dc4f99d846, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38d7733bf0bbc43d7aadded3269c5e19, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4785,7 +4785,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1211756745}
   - 212: {fileID: 1211756746}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Quarentine Hospital
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4828,7 +4828,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -801772231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3b6e50d9ca9d842f09cfe50935446266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5037,7 +5037,8 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingLayerID: 0
+  m_SortingBucketNormalizedSize: 0
+  m_SortingLayerID: -801772231
   m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1256971791
@@ -5771,7 +5772,7 @@ GameObject:
   - 224: {fileID: 1339152189}
   - 222: {fileID: 1339152191}
   - 114: {fileID: 1339152190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Encourage Sick Leave Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5827,7 +5828,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1339152191
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5905,7 +5906,7 @@ GameObject:
   - 224: {fileID: 1371741927}
   - 222: {fileID: 1371741929}
   - 114: {fileID: 1371741928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Close Office Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5961,7 +5962,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1371741929
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6189,7 +6190,7 @@ GameObject:
   - 224: {fileID: 1506915240}
   - 222: {fileID: 1506915242}
   - 114: {fileID: 1506915241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Home 1 Sanitation Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6245,7 +6246,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1506915242
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6386,7 +6387,7 @@ GameObject:
   - 224: {fileID: 1537108251}
   - 222: {fileID: 1537108253}
   - 114: {fileID: 1537108252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quarentine Hopsital Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6442,7 +6443,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1537108253
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6526,7 +6527,7 @@ GameObject:
   - 224: {fileID: 1581656156}
   - 222: {fileID: 1581656158}
   - 114: {fileID: 1581656157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Home 1 Quarentine Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6582,7 +6583,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1581656158
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7422,7 +7423,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1674151252}
   - 212: {fileID: 1674151253}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Aggressive Sanitation Home 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7465,7 +7466,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -801772231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3b6e50d9ca9d842f09cfe50935446266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7604,7 +7605,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1693550163}
   - 212: {fileID: 1693550164}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Close Office
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7647,7 +7648,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -801772231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3b6e50d9ca9d842f09cfe50935446266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8527,7 +8528,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.00000023841858, y: 0.00000023841858}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889755159
@@ -8549,9 +8550,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ca7bf3a3bf5c2450c8a824c0c1c959c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0a0b0eea7f114c98bca4b03daedea09, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -8966,7 +8967,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1951566303}
   - 212: {fileID: 1951566304}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Quarentine Home 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9009,7 +9010,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -801772231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3b6e50d9ca9d842f09cfe50935446266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9272,7 +9273,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1987575265}
   - 212: {fileID: 1987575266}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: Experimental Treatment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9315,7 +9316,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -801772231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3b6e50d9ca9d842f09cfe50935446266, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9708,7 +9709,7 @@ GameObject:
   - 224: {fileID: 2034073187}
   - 222: {fileID: 2034073189}
   - 114: {fileID: 2034073188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Home 2 Sanitation Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9764,7 +9765,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &2034073189
 CanvasRenderer:
   m_ObjectHideFlags: 0
