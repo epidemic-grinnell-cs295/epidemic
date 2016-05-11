@@ -45,16 +45,18 @@ function Update () {
     	closeWorkCost();}
     else if (time > 29000) { newDay = true; }
 
-    if (amount < displayAmount){	//mechanic to make money tickdown
+    if (displayAmount <= 0) {
+    	moneyText.text = "$" + displayAmount;
+    	endState.LoseGameMoney();}
+    else if (amount < displayAmount){	//mechanic to make money tickdown
     	displayAmount -= 5 ;
    		moneyText.text = "$" + displayAmount;}
    	else if (amount > displayAmount){
     	displayAmount += 5 ;
    		moneyText.text = "$" + displayAmount;}
-
-    if (displayAmount <= 0) {
-    	endState.LoseGameMoney();
-    }
+   	
+   
+    
 }
 
 function sanitationCost1 (){
