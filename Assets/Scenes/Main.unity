@@ -1783,7 +1783,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 862342184}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 007a622ec0266437b89580418ed4154b, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -2916,7 +2916,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 862342184}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 71fac65f1039b4e71b8ae95114701c21, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -3360,7 +3360,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 1710442462}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 71fac65f1039b4e71b8ae95114701c21, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -5037,7 +5037,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: -801772231
   m_SortingOrder: 10
   m_TargetDisplay: 0
@@ -5361,7 +5360,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 862342184}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 71fac65f1039b4e71b8ae95114701c21, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -5516,7 +5515,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 1710442462}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 007a622ec0266437b89580418ed4154b, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -6858,7 +6857,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 862342184}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 71fac65f1039b4e71b8ae95114701c21, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -7354,7 +7353,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 862342184}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 007a622ec0266437b89580418ed4154b, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -7536,7 +7535,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 1710442462}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 71fac65f1039b4e71b8ae95114701c21, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -8659,7 +8658,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 1710442462}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 007a622ec0266437b89580418ed4154b, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -9093,7 +9092,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 862342184}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 007a622ec0266437b89580418ed4154b, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -9235,7 +9234,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 862342184}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 007a622ec0266437b89580418ed4154b, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
@@ -9670,7 +9669,7 @@ MonoBehaviour:
   workLoc: {fileID: 2045050397}
   sleepLoc: {fileID: 1710442462}
   hospitalLoc: {fileID: 2076945543}
-  healthyAnimation: {fileID: 9100000, guid: 370261fb986c34e5bbdb276857fa19ab, type: 2}
+  healthyAnimation: {fileID: 9100000, guid: 71fac65f1039b4e71b8ae95114701c21, type: 2}
   sickAnimation: {fileID: 9100000, guid: a5cc36fc3542e4da192d0b5540ee66e2, type: 2}
   locID: 0
   clock: {fileID: 668180237}
