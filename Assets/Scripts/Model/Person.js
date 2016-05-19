@@ -112,7 +112,7 @@ function middayMovement(){
   	break;
 
   case (LocKind.Work):
-   if (currentLoc.close) { moveTo(homeLoc, 7);}
+   if (currentLoc.close) { moveTo(homeLoc, 10);}
    else if (currentLoc.appointments && !hospitalLoc.quarantine){
     	if(health == Health.infected) { moveTo(hospitalLoc, 20);}
     	else { moveTo(hospitalLoc, 1);}}
@@ -135,10 +135,12 @@ function middayMovement(){
 
 function moveTo(newLoc : Location, probability : int){
  waitTime = 10;
- if (Random.Range(0,200) < probability) { 
-  leaveCurrentLocation();
-  currentLoc = newLoc;
-  goToCurrentLocation();
+ if (!newLoc.close){
+ 	if (Random.Range(0,200) < probability) { 
+  	leaveCurrentLocation();
+  	currentLoc = newLoc;
+  	goToCurrentLocation();
+  	}
   }
  }
 

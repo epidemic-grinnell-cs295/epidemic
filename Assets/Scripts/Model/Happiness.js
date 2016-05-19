@@ -32,6 +32,7 @@ function Start () {
 }
 
 function Update () {
+  if (clock.daySpeed != 0){
 	var time = clock.time;
 	if (time > 28000 && time < 29000 && newDay) {	
     	quarantineH1Cost();		//charge for decisions everyday around 8
@@ -51,6 +52,7 @@ function Update () {
     if (displayHappiness <= 0) {
     	endState.LoseGameHappiness();
     }
+   }
 }
 
 function quarantineH1Cost (){

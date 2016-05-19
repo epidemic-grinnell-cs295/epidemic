@@ -34,6 +34,7 @@ function Start () {
 }
 
 function Update () {
+  if(clock.daySpeed != 0){
     var time = clock.time;
     if (time >28000 && time < 29000 && newDay) {	//get 100 dollars at the start of everyday
     	amount +=100;
@@ -54,9 +55,7 @@ function Update () {
    	else if (amount > displayAmount){
     	displayAmount += 5 ;
    		moneyText.text = "$" + displayAmount;}
-   	
-   
-    
+   }
 }
 
 function sanitationCost1 (){
